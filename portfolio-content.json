@@ -1,0 +1,170 @@
+{
+    "images": {
+        "hero": "/portfolio-admin/uploads/portfolio/703a386b77dcac13ae33dc9f707684da.webp",
+        "about": "/portfolio-admin/uploads/portfolio/3698694d4bcd71fd08e81303d81a1b2f.webp"
+    },
+    "skills": [
+        {
+            "name": "PHP",
+            "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg"
+        },
+        {
+            "name": "Laravel",
+            "img": "https://static.cdnlogo.com/logos/l/57/laravel.svg"
+        },
+        {
+            "name": "JavaScript",
+            "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg"
+        },
+        {
+            "name": "React.js",
+            "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg"
+        },
+        {
+            "name": "Vue.js",
+            "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg"
+        },
+        {
+            "name": "MySQL",
+            "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg"
+        },
+        {
+            "name": "SQLite",
+            "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg"
+        },
+        {
+            "name": "PostgreSQL",
+            "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg"
+        },
+        {
+            "name": "Tailwind CSS",
+            "img": "https://static.cdnlogo.com/logos/t/34/tailwind-css.svg"
+        },
+        {
+            "name": "Bootstrap",
+            "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg"
+        },
+        {
+            "name": "Docker",
+            "img": "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg"
+        },
+        {
+            "name": "AI Problem Solving",
+            "img": "https://cdn-icons-png.flaticon.com/512/4712/4712027.png"
+        }
+    ],
+    "projects": [
+        {
+            "name": "Doc-Flip",
+            "desc": "Free document conversion: turn DOCX, PDF, XLSX, or public Google Docs into downloadable formats.",
+            "images": [
+                "assets/images/projects/doc-flip/1.png",
+                "assets/images/projects/doc-flip/2.png",
+                "assets/images/projects/doc-flip/3.png",
+                "assets/images/projects/doc-flip/4.png",
+                "assets/images/projects/doc-flip/5.png"
+            ],
+            "demoUrl": "https://kitbin.top"
+        },
+        {
+            "name": "News-Site",
+            "desc": "Dynamic news site with news, user, and category management, built with raw PHP.",
+            "images": [
+                "assets/images/projects/news-site/news-site-home.png",
+                "assets/images/projects/news-site/news-site-add-user.png",
+                "assets/images/projects/news-site/news-site-categories.png",
+                "assets/images/projects/news-site/news-site-login.png",
+                "assets/images/projects/news-site/news-site-user-management.png",
+                "assets/images/projects/news-site/news-site-management.png",
+                "assets/images/projects/news-site/news-site-edit.png"
+            ],
+            "demoUrl": "https://hamzaa.top/news-site"
+        },
+        {
+            "name": "E-commerce site",
+            "desc": "Full dynamic shopping site made with PHP have product management, user authentication, and payment integration.",
+            "images": [
+                "assets/images/projects/shopping-project/shopping-project-home.png",
+                "assets/images/projects/shopping-project/shopping-project-signup.png",
+                "assets/images/projects/shopping-project/shopping-project-admin-login.png",
+                "assets/images/projects/shopping-project/shopping-project-admin-panel.png",
+                "assets/images/projects/shopping-project/shopping-project-product-management.png",
+                "assets/images/projects/shopping-project/shopping-project-checkout.png",
+                "assets/images/projects/shopping-project/shopping-project-order.png"
+            ],
+            "demoUrl": "https://hamzaa.top/shopping-project"
+        },
+        {
+            "name": "Student Database Management",
+            "desc": "Student database management system for managing records, classes, results, and attendance.",
+            "images": [
+                "assets/images/projects/student-db/student-db-home.png",
+                "assets/images/projects/student-db/student-db-records.png",
+                "assets/images/projects/student-db/student-db-results.png"
+            ],
+            "demoUrl": "https://hamzaa.top/student-db"
+        },
+        {
+            "name": "Dashboard",
+            "desc": "This dynamic dashboard built with Laravel.",
+            "images": [
+                "assets/images/projects/dashboard/dashboard-overview.png",
+                "assets/images/projects/dashboard/dashboard-home.png",
+                "assets/images/projects/dashboard/dashboard-profile.png",
+                "assets/images/projects/dashboard/dashboard-profile-details.png",
+                "assets/images/projects/dashboard/dashboard-users.png",
+                "assets/images/projects/dashboard/dashboard-content.png",
+                "assets/images/projects/dashboard/dashboard-analytics.png",
+                "assets/images/projects/dashboard/dashboard-settings.png",
+                "assets/images/projects/dashboard/dashboard-management.png"
+            ],
+            "demoUrl": "https://hamzaa.top/portfolio-admin/"
+        },
+        {
+            "name": "Unique ID Generator",
+            "desc": "Generates a new ID each time — never repeats a previous one.",
+            "images": [
+                "assets/images/projects/id-gen/unique-id-generator-oop.png"
+            ],
+            "demoUrl": "https://hamzaa.top/id-gen"
+        }
+    ],
+    "about": [
+        {
+            "title": "Born and raised in Dhaka",
+            "text": "I grew up in Dhaka and completed my SSC 10th grade in 2019."
+        },
+        {
+            "title": "Started working in 2019",
+            "text": "Due to family financial needs, I joined the workforce right after SSC and have been working continuously from 2019 until October 2025."
+        },
+        {
+            "title": "Current job",
+            "text": "I work as a Junior Operator at a water treatment plant — a role that taught me responsibility, time management, and hands-on problem solving."
+        },
+        {
+            "title": "A lifelong interest in tech",
+            "text": "I’ve loved technology since childhood — from Nokia 3310/5310 phones to using the internet on my dad’s phone before 3G/4G. I got my first computer at eight, and that curiosity never left."
+        },
+        {
+            "title": "Learning programming",
+            "text": "I began studying programming seriously in 2023 while working full-time, following tutorials and building small projects in my free time."
+        },
+        {
+            "title": "Education — now and next steps",
+            "text": "I completed my Higher Secondary Certificate (HSC) in the Arts stream in 2026. Now that I’m more financially stable, I plan to enroll in a diploma in Computer Science."
+        },
+        {
+            "title": "Continuous learner",
+            "text": "Because technology keeps changing, I’m always learning — from front-end and back-end basics to new frameworks and tools. I love exploring everything about tech."
+        },
+        {
+            "title": "Future interests",
+            "text": "I’m particularly excited to study LLMs, AI, and Python to expand my skill set and work on smarter, more useful applications."
+        },
+        {
+            "title": "Career goal",
+            "text": "My dream is to become a full-time programmer, building practical, user-friendly web applications that solve real problems."
+        }
+    ]
+}

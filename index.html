@@ -1,0 +1,2576 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Hamza | Full Stack Web Developer â€” Portfolio</title>
+  <meta name="description" content="Portfolio of Hamza â€” Full Stack Web Developer. Modern web applications built with PHP, Laravel, React, Vue, and modern web technologies." />
+  <meta name="author" content="Hamza" />
+  <meta name="theme-color" content="#070B14" />
+  <link rel="canonical" href="https://hamzaa.top/" />
+  <link rel="icon" href="assets/icons/hamza-logo.jpg" type="image/jpeg" />
+  <link rel="apple-touch-icon" href="assets/icons/hamza-logo.jpg" />
+  <link rel="preconnect" href="https://cdn.tailwindcss.com" />
+  <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
+  <link rel="preload" as="image" href="portfolio-admin/uploads/portfolio/703a386b77dcac13ae33dc9f707684da.webp" fetchpriority="high" />
+
+  <!-- Open Graph / social preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Hamza â€” Portfolio" />
+  <meta property="og:title" content="Hamza | Full Stack Web Developer" />
+  <meta property="og:description" content="I build simple, accessible, high-performance web applications that users enjoy and businesses trust." />
+  <meta property="og:url" content="https://hamzaa.top/" />
+  <meta property="og:image" content="https://hamzaa.top/assets/images/profile/hero-image.webp" />
+  <meta property="og:image:alt" content="Hamza â€” Full Stack Web Developer" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Hamza | Full Stack Web Developer" />
+  <meta name="twitter:description" content="I build simple, accessible, high-performance web applications that users enjoy and businesses trust." />
+  <meta name="twitter:image" content="https://hamzaa.top/assets/images/profile/hero-image.webp" />
+
+  <!-- Tailwind CDN -->
+  <script defer src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            'bg-canvas': '#F8FAFC',
+            'bg-surface': '#FFFFFF',
+            'tech-blue': '#2563EB',
+            'tech-sky': '#0284C7',
+            'tech-cyan': '#0891B2',
+            'tech-indigo': '#4F46E5',
+          },
+          fontFamily: {
+            sans: ['Inter', 'Noto Sans', 'system-ui', '-apple-system', 'sans-serif'],
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Production React + Babel -->
+  <script defer src="https://cdn.jsdelivr.net/npm/react@18.2.0/umd/react.production.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/react-dom@18.2.0/umd/react-dom.production.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/@babel/standalone@7.20.15/babel.min.js"></script>
+
+  <!-- Google Fonts: Inter + multilingual Noto Sans for international greetings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Noto+Sans:ital,wght@0,400;0,700;1,400;1,700&family=Noto+Sans+Arabic&family=Noto+Sans+Bengali&family=Noto+Sans+Devanagari&family=Noto+Sans+Gurmukhi&family=Noto+Sans+Hebrew&family=Noto+Sans+Tamil&family=Noto+Sans+Thai&display=swap"
+    rel="stylesheet">
+
+  <style>    /* ==========================================================================
+       DESIGN SYSTEM: Refined Frosted Glass Â· Apple-Inspired Minimal
+       ========================================================================== */
+
+    :root {
+      --bg-canvas: #F4F7FB;
+      --bg-canvas-2: #EDF2F9;
+
+      --accent: #0284C7;
+      --accent-strong: #0369A1;
+      --accent-soft: rgba(2, 132, 199, 0.10);
+      --accent-soft-2: rgba(2, 132, 199, 0.16);
+
+      --text-primary: #0F172A;
+      --text-secondary: #475569;
+      --text-tertiary: #94A3B8;
+
+      --surface: rgba(255, 255, 255, 0.58);
+      --surface-strong: rgba(255, 255, 255, 0.74);
+      --surface-hover: rgba(255, 255, 255, 0.82);
+
+      --border: rgba(148, 163, 184, 0.22);
+      --border-strong: rgba(148, 163, 184, 0.40);
+
+      --shadow-xs: 0 1px 2px rgba(2, 6, 23, 0.04);
+      --shadow-sm: 0 1px 2px rgba(2, 6, 23, 0.05), 0 8px 24px -12px rgba(2, 6, 23, 0.12);
+      --shadow-md: 0 24px 52px -28px rgba(2, 6, 23, 0.24);
+
+      --radius-lg: 20px;
+      --radius-xl: 28px;
+
+      --ease: cubic-bezier(0.22, 1, 0.36, 1);
+      --font-display: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+      --font-body: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+    }
+
+    *, *::before, *::after {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background-color: var(--bg-canvas);
+      color: var(--text-primary);
+      font-family: var(--font-body);
+      min-height: 100vh;
+      overflow-x: hidden;
+      position: relative;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+      text-rendering: optimizeLegibility;
+    }
+
+    .bg-bg-canvas {
+      background-color: transparent !important;
+    }
+
+    /* Keep the initial viewport responsive while preserving layout space below it. */
+    #skills,
+    #projects,
+    #about,
+    #contact,
+    #Resume {
+      content-visibility: auto;
+      contain-intrinsic-size: auto 720px;
+    }
+
+    /* Calm, soft ambient backdrop (replaces the busy cityscape photo) */
+    .cityscape-background {
+      position: fixed;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+      z-index: 0;
+      background:
+        radial-gradient(42rem 34rem at 12% 6%, rgba(14, 165, 233, 0.14), transparent 62%),
+        radial-gradient(38rem 30rem at 88% 16%, rgba(99, 102, 241, 0.11), transparent 62%),
+        radial-gradient(46rem 38rem at 50% 100%, rgba(56, 189, 248, 0.10), transparent 66%),
+        linear-gradient(180deg, var(--bg-canvas) 0%, var(--bg-canvas-2) 100%);
+    }
+
+    .nature-video-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 0;
+      background: linear-gradient(180deg, rgba(2, 6, 23, 0.00), rgba(2, 6, 23, 0.02));
+    }
+
+    /* Soft, restrained ambient glow orbs */
+    .bg-orb {
+      position: fixed;
+      border-radius: 50%;
+      pointer-events: none;
+      z-index: 0;
+      will-change: transform;
+      opacity: 0.72;
+    }
+
+    .bg-orb-1 {
+      width: 560px;
+      height: 560px;
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.16) 0%, transparent 68%);
+      filter: blur(80px);
+      top: -14%;
+      left: -8%;
+      animation: drift-1 26s ease-in-out infinite alternate;
+    }
+
+    .bg-orb-2 {
+      width: 520px;
+      height: 520px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.14) 0%, transparent 68%);
+      filter: blur(80px);
+      bottom: 6%;
+      right: -8%;
+      animation: drift-2 30s ease-in-out infinite alternate;
+    }
+
+    .bg-orb-3 {
+      width: 480px;
+      height: 480px;
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.12) 0%, transparent 68%);
+      filter: blur(78px);
+      top: 46%;
+      left: 30%;
+      animation: drift-3 32s ease-in-out infinite alternate;
+    }
+
+    @keyframes drift-1 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(40px, 30px) scale(1.06); }
+    }
+    @keyframes drift-2 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-35px, -40px) scale(1.05); }
+    }
+    @keyframes drift-3 {
+      0% { transform: translate(0, 0) scale(1); }
+      100% { transform: translate(-25px, 30px) scale(0.96); }
+    }
+
+    /* Subtle grain for depth only â€” kept extremely faint */
+    .noise-overlay {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 1;
+      opacity: 0.014;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+    }
+
+    /* ==========================================================================
+       Frosted Glass Card System (subtle, readable, depth without noise)
+       ========================================================================== */
+
+    .crystal-card {
+      position: relative;
+      border-radius: var(--radius-xl);
+      overflow: hidden;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      -webkit-backdrop-filter: blur(18px) saturate(150%);
+      backdrop-filter: blur(18px) saturate(150%);
+      box-shadow: var(--shadow-sm);
+      transition: transform 0.35s var(--ease), box-shadow 0.35s var(--ease), background-color 0.35s var(--ease), border-color 0.35s var(--ease);
+      isolation: isolate;
+      width: 100%;
+    }
+
+    .crystal-card::before,
+    .crystal-card::after {
+      content: none;
+    }
+
+    .crystal-card:hover {
+      transform: translateY(-3px);
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Project card glow variants: now a subtle tinted hover ring only */
+    .project-card-purple,
+    .project-card-sky,
+    .project-card-cyan {
+      --project-tint: rgba(2, 132, 199, 0.08);
+    }
+    .project-card-purple::before,
+    .project-card-sky::before,
+    .project-card-cyan::before {
+      content: none;
+    }
+
+    /* ==========================================================================
+       Hero Section & Cinematic Portrait Integration
+       ========================================================================== */
+
+    #home {
+      /* Percentage min-height so the section is never shorter than the viewport at
+         embedded/zoomed widths (svh alone collapses inside a scrolled ancestor). */
+      min-height: 100vh;
+      min-height: 100svh;
+      position: relative;
+      isolation: isolate;
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      overflow: hidden;
+      background-color: #070B14;
+      padding-top: 5.5rem;
+      /* Full-bleed: escape the centred max-w wrapper so the dark panel spans the viewport. */
+      width: 100vw;
+      margin-inline: calc(50% - 50vw);
+      border-radius: 0;
+    }
+
+    .hero-background {
+      position: absolute;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+
+    .hero-image {
+      position: absolute;
+      right: 0;
+      top: 50%;
+      transform: translateY(-52%);
+      height: 105%;
+      max-height: 1020px;
+      width: auto;
+      max-width: 70vw;
+      object-fit: contain;
+      object-position: right center;
+      background-color: transparent;
+      transition: transform 0.6s var(--ease);
+      filter: drop-shadow(-12px 0 32px rgba(0, 0, 0, 0.5));
+      mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 12%, rgba(0, 0, 0, 1) 28%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, rgba(0, 0, 0, 0.5) 12%, rgba(0, 0, 0, 1) 28%);
+    }
+
+    /* Ambient directional scrim overlay:
+       Protects left-side text completely, transitions smoothly across center,
+       and lets the developer portrait on the right shine through in rich detail. */
+    .hero-content-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background: linear-gradient(
+        to right,
+        rgba(7, 11, 20, 0.95) 0%,
+        rgba(7, 11, 20, 0.80) 28%,
+        rgba(7, 11, 20, 0.35) 48%,
+        rgba(7, 11, 20, 0.05) 65%,
+        transparent 100%
+      );
+    }
+
+    /* Hero ambient glow effects */
+    .hero-ambient-glow {
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(90px);
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.45;
+    }
+
+    .hero-ambient-glow--cyan {
+      width: 550px;
+      height: 550px;
+      background: radial-gradient(circle, rgba(14, 165, 233, 0.22) 0%, transparent 70%);
+      top: 5%;
+      right: 15%;
+    }
+
+    .hero-ambient-glow--indigo {
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.20) 0%, transparent 70%);
+      bottom: 5%;
+      right: 5%;
+    }
+
+    /* Desktop copy positioning â€” aligns with the max-w-[1380px] + px-10 content grid */
+    .hero-copy {
+      position: relative;
+      z-index: 10;
+      width: min(52%, 750px);
+      margin-left: max(1.25rem, calc((100vw - 1380px) / 2 + 2.5rem));
+      padding: 3rem 0 2rem;
+    }
+
+    .hero-copy h1 {
+      margin-bottom: 1.25rem;
+      /* Capped so "Full Stack Web Developer" breaks 2 lines instead of leaving the
+         single-word orphan "Developer" on its own line. */
+      font-size: clamp(2.3rem, 4.1vw, 3.6rem);
+      line-height: 1.06;
+      letter-spacing: -0.04em;
+      color: #FFFFFF;
+      text-wrap: balance;
+      text-shadow: 0 2px 14px rgba(0, 0, 0, 0.6);
+    }
+
+    .hero-copy h1 span:not(.gradient-text-hero) {
+      color: rgba(241, 245, 249, 0.96);
+    }
+
+    .hero-copy h1 .gradient-text-hero {
+      background: linear-gradient(135deg, #38BDF8 0%, #60A5FA 50%, #818CF8 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      color: #38BDF8;
+      filter: drop-shadow(0 2px 8px rgba(56, 189, 248, 0.3));
+    }
+
+    .hero-copy h3 {
+      max-width: 48ch;
+      margin-bottom: 1.5rem;
+      font-size: clamp(1rem, 1.35vw, 1.18rem);
+      line-height: 1.68;
+      color: rgba(226, 232, 240, 0.90);
+      text-wrap: pretty;
+      text-shadow: 0 1px 6px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Tech highlight tags */
+    .hero-tech-pills {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.45rem;
+      margin-bottom: 1.75rem;
+    }
+
+    .hero-tech-pill {
+      font-size: 0.76rem;
+      font-weight: 500;
+      color: rgba(226, 232, 240, 0.85);
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      border-radius: 9999px;
+      padding: 0.25rem 0.65rem;
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      transition: all 0.2s var(--ease);
+    }
+
+    .hero-tech-pill:hover {
+      background: rgba(56, 189, 248, 0.16);
+      border-color: rgba(56, 189, 248, 0.35);
+      color: #FFFFFF;
+      transform: translateY(-1px);
+    }
+
+    /* Inline icon marquee carousel â€” sits next to the greeting pill */
+    .hero-floating-badge {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      width: min(300px, 36vw);
+      height: 42px;
+      padding: 0;
+      background: rgba(15, 23, 42, 0.68);
+      border: 1px solid rgba(255, 255, 255, 0.16);
+      border-radius: 9999px;
+      backdrop-filter: blur(18px) saturate(160%);
+      -webkit-backdrop-filter: blur(18px) saturate(160%);
+      box-shadow: 0 4px 18px rgba(0, 0, 0, 0.32), inset 0 1px 0 rgba(255,255,255,0.08);
+      transition: border-color 0.25s var(--ease);
+      mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+      flex-shrink: 0;
+    }
+
+    .hero-floating-badge:hover {
+      border-color: rgba(56, 189, 248, 0.45);
+    }
+
+    /* Unused dot kept for compatibility */
+    .hero-floating-badge-dot { display: none; }
+
+    /* Icon marquee track */
+    .icon-marquee-track {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      padding: 0 10px;
+      animation: icon-marquee 28s linear infinite;
+      will-change: transform;
+      white-space: nowrap;
+      flex-shrink: 0;
+    }
+
+    .hero-floating-badge:hover .icon-marquee-track {
+      animation-play-state: paused;
+    }
+
+    .icon-marquee-track img {
+      height: 22px;
+      width: 22px;
+      object-fit: contain;
+      filter: brightness(0) invert(1);
+      opacity: 0.78;
+      flex-shrink: 0;
+      transition: opacity 0.2s, transform 0.2s;
+    }
+
+    .icon-marquee-track img:hover {
+      opacity: 1;
+      transform: scale(1.18);
+      filter: none;
+    }
+
+    @keyframes icon-marquee {
+      0%   { transform: translateX(0); }
+      100% { transform: translateX(-50%); }
+    }
+
+    .hero-copy .glass-pill {
+      background: rgba(15, 23, 42, 0.65) !important;
+      backdrop-filter: blur(16px) saturate(150%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.18) !important;
+      color: #FFFFFF !important;
+      padding: 0.45rem 0.95rem;
+      /* Match .hero-floating-badge (height: 42px) so both pills in the row align. */
+      height: 42px;
+      display: inline-flex;
+      align-items: center;
+    }
+
+    .hero-copy .glass-pill > span:last-child {
+      font-size: 0.85rem;
+    }
+
+    /* Hero CTAs only. Excluding .glass-pill is essential: the greeting badge also
+       carries .droplet-btn, so an unscoped min-height: 3.25rem (52px) overrode the
+       42px height set in the .glass-pill rule below and left the two pills in the
+       greeting row misaligned (52px vs the 42px marquee badge). */
+    .hero-copy .droplet-btn:not(.droplet-btn-secondary):not(.glass-pill) {
+      min-height: 3.25rem;
+      padding: 0.85rem 1.6rem;
+      background: linear-gradient(135deg, #0284C7 0%, #0369A1 100%);
+      border: 1px solid rgba(56, 189, 248, 0.3);
+      box-shadow: 0 8px 24px -6px rgba(2, 132, 199, 0.6);
+      color: #FFFFFF;
+    }
+
+    .hero-copy .droplet-btn:not(.droplet-btn-secondary):not(.glass-pill):hover {
+      background: linear-gradient(135deg, #0369A1 0%, #075985 100%);
+      box-shadow: 0 12px 28px -6px rgba(2, 132, 199, 0.7);
+    }
+
+    .hero-copy .droplet-btn-secondary {
+      min-height: 3.25rem;
+      padding: 0.85rem 1.6rem;
+      background: rgba(255, 255, 255, 0.10) !important;
+      backdrop-filter: blur(16px) saturate(150%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.22) !important;
+      color: #FFFFFF !important;
+    }
+
+    .hero-copy .droplet-btn-secondary:hover {
+      background: rgba(255, 255, 255, 0.18) !important;
+      border-color: rgba(56, 189, 248, 0.45) !important;
+      color: #FFFFFF !important;
+    }
+
+    .hero-copy > div > div:last-child {
+      gap: 0.5rem;
+    }
+
+    .hero-copy > div > div:last-child ul {
+      background: rgba(15, 23, 42, 0.65) !important;
+      backdrop-filter: blur(16px) saturate(150%) !important;
+      -webkit-backdrop-filter: blur(16px) saturate(150%) !important;
+      border: 1px solid rgba(255, 255, 255, 0.16) !important;
+      padding: 0.35rem 0.5rem;
+      border-radius: 9999px;
+    }
+
+    .hero-copy > div > div:last-child ul a {
+      width: 2.35rem;
+      height: 2.35rem;
+      color: rgba(241, 245, 249, 0.85) !important;
+    }
+
+    .hero-copy > div > div:last-child ul a:hover {
+      color: #38BDF8 !important;
+      background: rgba(56, 189, 248, 0.16) !important;
+    }
+
+    .hero-copy > div > div:last-child ul svg {
+      width: 1.15rem;
+      height: 1.15rem;
+    }
+
+    /* Tablet breakpoint (768px - 1024px) */
+    @media (min-width: 768px) and (max-width: 1024px) {
+      .hero-copy {
+        width: min(55%, 540px);
+        margin-left: 1.5rem;
+        padding-top: 3.5rem;
+      }
+      .hero-image {
+        right: 0;
+        height: 100%;
+        width: auto;
+        max-width: 65vw;
+        object-fit: contain;
+        object-position: right center;
+      }
+      .hero-content-overlay {
+        background: linear-gradient(
+          to right,
+          rgba(7, 11, 20, 0.95) 0%,
+          rgba(7, 11, 20, 0.82) 38%,
+          rgba(7, 11, 20, 0.30) 62%,
+          transparent 100%
+        );
+      }
+      .hero-floating-badge {
+        bottom: 2rem;
+        right: 1.5rem;
+      }
+    }
+
+    /* Mobile breakpoint (< 768px) */
+    @media (max-width: 767px) {
+      #home {
+        min-height: 100svh;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-end;
+        align-items: flex-start;
+        padding-bottom: 1.75rem;
+        padding-top: 5.5rem;
+      }
+
+      .hero-background {
+        position: absolute;
+        inset: 0;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+      }
+
+      .hero-image {
+        position: absolute;
+        top: 52px;
+        left: 50%;
+        right: auto;
+        transform: translateX(-50%);
+        width: 95%;
+        max-width: 440px;
+        height: 48svh;
+        object-fit: contain;
+        object-position: center top;
+        mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
+        -webkit-mask-image: linear-gradient(to bottom, #000 75%, transparent 100%);
+      }
+
+      .hero-content-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(7, 11, 20, 0.99) 0%,
+          rgba(7, 11, 20, 0.95) 45%,
+          rgba(7, 11, 20, 0.45) 70%,
+          transparent 100%
+        );
+      }
+
+      .hero-copy {
+        width: 100%;
+        margin-left: 0;
+        padding: 0.75rem 1rem 0;
+      }
+
+      .hero-copy h1 {
+        font-size: clamp(1.85rem, 7vw, 2.4rem);
+        line-height: 1.1;
+        margin-bottom: 0.65rem;
+      }
+
+      .hero-copy h3 {
+        font-size: 0.92rem;
+        line-height: 1.55;
+        margin-bottom: 1rem;
+        max-width: 100%;
+      }
+
+      .hero-floating-badge {
+        display: none;
+      }
+
+      /* The greeting badge is a pill, not a CTA: let it hug its own text and stay
+         centred. The old `width: 100%` rule here also matched it, because the badge
+         carries .droplet-btn as well, and stretched it into a full-width bar. */
+      .hero-copy .glass-pill {
+        width: auto;
+        align-self: center;
+      }
+
+      /* Hide the core tech tags on phones/tablets. Stacked under a 2-line heading
+         they pushed the CTAs below the fold; the skills section already lists the
+         same stack with icons. Reappears from 768px up (`md:justify-start` row).
+         `!important` is required: the Tailwind Play CDN injects its `.flex`
+         utility into <head> *after* this inline stylesheet, so an equally
+         specific `display: none` would lose the cascade. */
+      .hero-copy .hero-tech-pills {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 420px) {
+      .hero-copy {
+        padding-inline: 1rem;
+      }
+      .hero-copy h1 {
+        font-size: 1.85rem;
+      }
+    }
+
+    .hero-copy a:focus-visible,
+    .hero-copy button:focus-visible,
+    .floating-nav a:focus-visible,
+    .floating-nav button:focus-visible {
+      outline: 3px solid rgba(14, 165, 233, 0.72);
+      outline-offset: 4px;
+    }
+
+    /* Typography */
+    .gradient-heading {
+      color: var(--text-primary);
+      letter-spacing: -0.03em;
+      font-weight: 700;
+    }
+
+    .gradient-text-hero {
+      color: var(--accent);
+      background: none;
+      -webkit-text-fill-color: currentColor;
+    }
+
+    /* ==========================================================================
+       Button System: solid primary + soft glass secondary
+       ========================================================================== */
+
+    .droplet-btn {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: var(--accent);
+      color: #FFFFFF;
+      border: 1px solid rgba(2, 132, 199, 0.16);
+      border-radius: 9999px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+      box-shadow: 0 8px 22px -10px rgba(2, 132, 199, 0.55);
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background-color 0.25s var(--ease);
+      overflow: hidden;
+      isolation: isolate;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .droplet-btn::before,
+    .droplet-btn::after {
+      content: none;
+    }
+
+    .droplet-btn:hover {
+      background: var(--accent-strong);
+      transform: translateY(-1.5px);
+      box-shadow: 0 12px 28px -10px rgba(2, 132, 199, 0.62);
+    }
+
+    .droplet-btn:active {
+      transform: translateY(0) scale(0.985);
+      box-shadow: 0 4px 12px -8px rgba(2, 132, 199, 0.5);
+    }
+
+    .droplet-btn-secondary {
+      position: relative;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.6rem;
+      background: var(--surface);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      backdrop-filter: blur(14px) saturate(150%);
+      color: var(--text-secondary);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      box-shadow: var(--shadow-xs);
+      transition: transform 0.25s var(--ease), box-shadow 0.25s var(--ease), background-color 0.25s var(--ease), color 0.25s var(--ease), border-color 0.25s var(--ease);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .droplet-btn-secondary::before,
+    .droplet-btn-secondary::after {
+      content: none;
+    }
+
+    .droplet-btn-secondary:hover {
+      transform: translateY(-1.5px);
+      background: var(--surface-hover);
+      color: var(--text-primary);
+      border-color: var(--border-strong);
+      box-shadow: var(--shadow-sm);
+    }
+    /* Soft glass pill: used for overlay tags and small image-control buttons so dark
+       text stays readable on translucent surfaces instead of solid accent. */
+    .glass-pill {
+      background: rgba(255, 255, 255, 0.78) !important;
+      -webkit-backdrop-filter: blur(10px) saturate(140%) !important;
+      backdrop-filter: blur(10px) saturate(140%) !important;
+      color: var(--text-secondary) !important;
+      border-color: var(--border-strong) !important;
+      box-shadow: var(--shadow-xs) !important;
+    }
+
+    .glass-pill:hover {
+      background: rgba(255, 255, 255, 0.92) !important;
+      color: var(--text-primary) !important;
+      transform: translateY(-1px);
+    }
+
+    body.night-mode .glass-pill {
+      background: rgba(23, 32, 54, 0.80) !important;
+      color: rgba(203, 213, 225, 0.88) !important;
+      border-color: var(--border-strong) !important;
+    }
+
+    body.night-mode .glass-pill:hover {
+      background: rgba(30, 41, 59, 0.92) !important;
+      color: rgba(255, 255, 255, 0.96) !important;
+    }
+
+
+    /* ==========================================================================
+       Floating Pill Navigation
+       ========================================================================== */
+
+    .floating-nav {
+      position: fixed;
+      top: 8px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: min(96vw, 1160px);
+      background: var(--surface);
+      -webkit-backdrop-filter: blur(22px) saturate(170%);
+      backdrop-filter: blur(22px) saturate(170%);
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      padding: 8px 18px;
+      z-index: 1000;
+      box-shadow: var(--shadow-sm);
+      transition: box-shadow 0.3s var(--ease), background-color 0.3s var(--ease);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .floating-nav::before,
+    .floating-nav::after {
+      content: none;
+    }
+
+    .floating-nav:hover {
+      background: var(--surface-hover);
+      box-shadow: var(--shadow-md);
+    }
+
+    /* Appearance toggle controls */
+    .appearance-controls {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .appearance-toggle {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      min-height: 2rem;
+      padding: 0.3rem 0.65rem;
+      border: 1px solid var(--border);
+      border-radius: 9999px;
+      color: var(--text-secondary);
+      background: var(--surface);
+      font-size: 0.72rem;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background-color 0.2s var(--ease), color 0.2s var(--ease), border-color 0.2s var(--ease);
+    }
+
+    .appearance-toggle:hover,
+    .appearance-toggle[aria-pressed="true"] {
+      color: var(--accent-strong);
+      border-color: var(--border-strong);
+      background: var(--accent-soft);
+    }
+
+    /* Collapse the toggle labels earlier so the 6 nav links + controls always fit
+       on one line inside the pill (they previously overflowed and were clipped by
+       the .floating-nav overflow:hidden at ~820â€“1100px). */
+    @media (max-width: 1100px) {
+      .floating-nav > div > a > span > span {
+        display: none;
+      }
+      .appearance-toggle span:last-child {
+        display: none;
+      }
+      .appearance-toggle {
+        padding: 0.3rem 0.5rem;
+      }
+    }
+
+    @media (max-width: 767px) {
+      .floating-nav > div {
+        gap: 0.5rem;
+      }
+
+      .floating-nav .appearance-controls {
+        margin-left: auto;
+      }
+    }
+
+    /* Scroll arrows: minimal circular ghost affordance */
+    .section-scroll-arrow {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      color: var(--text-secondary);
+      box-shadow: var(--shadow-xs);
+      transition: background-color 0.25s var(--ease), color 0.25s var(--ease), transform 0.25s var(--ease), border-color 0.25s var(--ease);
+    }
+
+    .section-scroll-arrow:hover {
+      color: var(--accent-strong);
+      background: var(--surface-hover);
+      border-color: var(--border-strong);
+      transform: translateY(2px);
+    }
+
+    .section-scroll-arrow svg {
+      z-index: 1;
+    }
+
+    /* The hero down-arrow floats over the dark portrait, so it needs a dark glass disc
+       with a white glyph (it was a near-white arrow on a near-white circle â‰ˆ1.3:1). */
+    #home .section-scroll-arrow {
+      background: rgba(15, 23, 42, 0.72);
+      border: 1px solid rgba(255, 255, 255, 0.28);
+      color: #FFFFFF;
+      box-shadow: 0 6px 18px -6px rgba(0, 0, 0, 0.6);
+      -webkit-backdrop-filter: blur(14px) saturate(150%);
+      backdrop-filter: blur(14px) saturate(150%);
+    }
+
+    #home .section-scroll-arrow:hover {
+      background: rgba(2, 132, 199, 0.92);
+      border-color: rgba(56, 189, 248, 0.60);
+      color: #FFFFFF;
+    }
+
+    /* Keep the hero's single down-arrow only; hide noisy duplicates */
+    .skills-scroll-arrow,
+    .projects-scroll-arrow,
+    .about-scroll-arrow {
+      display: none !important;
+    }
+
+    /* ==========================================================================
+       Minimalist & Transparent Content Sections (all sections outside #home)
+       ========================================================================== */
+
+    /* Remove big outer card containers on sections so content flows cleanly on canvas */
+    #skills > .crystal-card,
+    #projects > .crystal-card,
+    #about > .crystal-card,
+    #contact > .crystal-card,
+    #Resume > .crystal-card {
+      background: transparent !important;
+      border: none !important;
+      border-radius: 0 !important;
+      box-shadow: none !important;
+      backdrop-filter: none !important;
+      -webkit-backdrop-filter: none !important;
+      padding-inline: 0 !important;
+      overflow: visible !important;
+    }
+
+    #skills > .crystal-card:hover,
+    #projects > .crystal-card:hover,
+    #about > .crystal-card:hover,
+    #contact > .crystal-card:hover,
+    #Resume > .crystal-card:hover {
+      transform: none !important;
+      background: transparent !important;
+      box-shadow: none !important;
+      border: none !important;
+    }
+
+    /* Elegant, subtle section separators */
+    #skills, #projects, #about, #contact, #Resume {
+      padding-top: clamp(1.25rem, 2.5vw, 2.25rem) !important;
+      padding-bottom: clamp(1.25rem, 2.5vw, 2.25rem) !important;
+      border-top: 1px solid rgba(148, 163, 184, 0.16);
+      position: relative;
+    }
+
+    /* Reduce inner card padding to shrink left/right dead space */
+    #skills > .crystal-card,
+    #projects > .crystal-card,
+    #about > .crystal-card,
+    #contact > .crystal-card,
+    #Resume > .crystal-card {
+      padding: clamp(1rem, 2.5vw, 2rem) clamp(0.75rem, 2vw, 1.5rem) !important;
+    }
+
+    /* Override main wrapper spacing: reduce space-y-* inter-section gaps */
+    main[class*="space-y-"] > * + * {
+      margin-top: clamp(0px, 1vw, 0.5rem) !important;
+    }
+
+    /* Override main wrapper horizontal padding on larger screens */
+    main[class*="max-w-"] {
+      padding-left: clamp(0.5rem, 1.5vw, 1.5rem) !important;
+      padding-right: clamp(0.5rem, 1.5vw, 1.5rem) !important;
+    }
+
+    body.night-mode #skills,
+    body.night-mode #projects,
+    body.night-mode #about,
+    body.night-mode #contact,
+    body.night-mode #Resume {
+      border-top-color: rgba(255, 255, 255, 0.08);
+    }
+
+    /* Minimalist Transparent Skill Mini Cards */
+    .skill-mini-card {
+      position: relative;
+      background: rgba(255, 255, 255, 0.40) !important;
+      border: 1px solid rgba(148, 163, 184, 0.18) !important;
+      border-radius: 20px !important;
+      -webkit-backdrop-filter: blur(12px) saturate(140%) !important;
+      backdrop-filter: blur(12px) saturate(140%) !important;
+      box-shadow: 0 2px 10px rgba(0, 0, 0, 0.02) !important;
+      transition: transform 0.25s var(--ease), background-color 0.25s var(--ease), border-color 0.25s var(--ease), box-shadow 0.25s var(--ease);
+      overflow: hidden;
+      isolation: isolate;
+    }
+
+    .skill-mini-card::before,
+    .skill-mini-card::after {
+      content: none;
+    }
+
+    .skill-mini-card:hover {
+      transform: translateY(-4px) !important;
+      background: rgba(255, 255, 255, 0.85) !important;
+      border-color: rgba(2, 132, 199, 0.35) !important;
+      box-shadow: 0 12px 28px -10px rgba(2, 132, 199, 0.15) !important;
+    }
+
+    body.night-mode .skill-mini-card {
+      background: rgba(255, 255, 255, 0.025) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      box-shadow: none !important;
+    }
+
+    body.night-mode .skill-mini-card:hover {
+      background: rgba(255, 255, 255, 0.06) !important;
+      border-color: rgba(56, 189, 248, 0.35) !important;
+      box-shadow: 0 12px 28px -10px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    /* Minimalist Transparent Project Cards */
+    #projects .grid > .crystal-card {
+      background: rgba(255, 255, 255, 0.45) !important;
+      border: 1px solid rgba(148, 163, 184, 0.18) !important;
+      border-radius: 24px !important;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.03) !important;
+      backdrop-filter: blur(16px) !important;
+      -webkit-backdrop-filter: blur(16px) !important;
+      transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background-color 0.25s var(--ease), box-shadow 0.25s var(--ease) !important;
+    }
+
+    #projects .grid > .crystal-card:hover {
+      transform: translateY(-4px) !important;
+      background: rgba(255, 255, 255, 0.82) !important;
+      border-color: rgba(2, 132, 199, 0.35) !important;
+      box-shadow: 0 16px 36px -12px rgba(2, 132, 199, 0.14) !important;
+    }
+
+    body.night-mode #projects .grid > .crystal-card {
+      background: rgba(255, 255, 255, 0.025) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+      box-shadow: none !important;
+    }
+
+    body.night-mode #projects .grid > .crystal-card:hover {
+      background: rgba(255, 255, 255, 0.055) !important;
+      border-color: rgba(56, 189, 248, 0.35) !important;
+      box-shadow: 0 16px 36px -12px rgba(0, 0, 0, 0.5) !important;
+    }
+
+    #projects .grid > .crystal-card .relative.rounded-2xl {
+      background: rgba(0, 0, 0, 0.025) !important;
+      border: 1px solid rgba(148, 163, 184, 0.14) !important;
+    }
+
+    body.night-mode #projects .grid > .crystal-card .relative.rounded-2xl {
+      background: rgba(0, 0, 0, 0.35) !important;
+      border-color: rgba(255, 255, 255, 0.07) !important;
+    }
+
+    /* Minimalist Transparent Timeline / About Items */
+    #about ol li,
+    [class~="bg-white/70"] {
+      background: rgba(255, 255, 255, 0.40) !important;
+      border: 1px solid rgba(148, 163, 184, 0.16) !important;
+      border-radius: 20px !important;
+      box-shadow: none !important;
+      backdrop-filter: blur(12px) !important;
+      -webkit-backdrop-filter: blur(12px) !important;
+      transition: transform 0.25s var(--ease), border-color 0.25s var(--ease), background-color 0.25s var(--ease) !important;
+    }
+
+    #about ol li:hover,
+    [class~="bg-white/70"]:hover {
+      background: rgba(255, 255, 255, 0.75) !important;
+      border-color: rgba(2, 132, 199, 0.32) !important;
+      transform: translateX(4px) !important;
+    }
+
+    body.night-mode #about ol li,
+    body.night-mode [class~="bg-white/70"] {
+      background: rgba(255, 255, 255, 0.025) !important;
+      border-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    body.night-mode #about ol li:hover,
+    body.night-mode [class~="bg-white/70"]:hover {
+      background: rgba(255, 255, 255, 0.055) !important;
+      border-color: rgba(56, 189, 248, 0.35) !important;
+    }
+
+    #about img {
+      background: transparent !important;
+      border: 1px solid rgba(148, 163, 184, 0.18) !important;
+      box-shadow: 0 8px 30px rgba(0, 0, 0, 0.04) !important;
+    }
+
+    body.night-mode #about img {
+      border-color: rgba(255, 255, 255, 0.10) !important;
+      box-shadow: none !important;
+    }
+
+    /* Minimalist Transparent Footer */
+    footer {
+      background: transparent !important;
+      border-top: 1px solid rgba(148, 163, 184, 0.16) !important;
+      margin-top: 2rem !important;
+    }
+
+    body.night-mode footer {
+      border-top-color: rgba(255, 255, 255, 0.08) !important;
+    }
+
+    /* ==========================================================================
+       Night Mode
+       ========================================================================== */
+
+    body.night-mode {
+      background-color: #0A0F1E;
+      color: rgba(255, 255, 255, 0.95);
+      --bg-canvas: #0A0F1E;
+      --bg-canvas-2: #0C1224;
+      --surface: rgba(17, 24, 39, 0.58);
+      --surface-strong: rgba(17, 24, 39, 0.72);
+      --surface-hover: rgba(23, 32, 54, 0.82);
+      --border: rgba(148, 163, 184, 0.16);
+      --border-strong: rgba(148, 163, 184, 0.30);
+      --text-primary: rgba(255, 255, 255, 0.95);
+      --text-secondary: rgba(203, 213, 225, 0.82);
+      --text-tertiary: rgba(148, 163, 184, 0.62);
+      --shadow-xs: 0 1px 2px rgba(0, 0, 0, 0.25);
+      --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.28), 0 10px 26px -14px rgba(0, 0, 0, 0.45);
+      --shadow-md: 0 26px 56px -28px rgba(0, 0, 0, 0.60);
+    }
+
+    body.night-mode .cityscape-background {
+      background:
+        radial-gradient(42rem 34rem at 12% 6%, rgba(14, 165, 233, 0.10), transparent 62%),
+        radial-gradient(38rem 30rem at 88% 16%, rgba(99, 102, 241, 0.09), transparent 62%),
+        radial-gradient(46rem 38rem at 50% 100%, rgba(56, 189, 248, 0.08), transparent 66%),
+        linear-gradient(180deg, #0A0F1E 0%, #0C1224 100%);
+    }
+
+    /* Dark-mode treatment for the hero image */
+    body.night-mode .hero-image {
+      filter: saturate(0.95) brightness(0.95);
+    }
+    body.night-mode .hero-content-overlay {
+      background: linear-gradient(
+        to right,
+        rgba(7, 11, 20, 0.97) 0%,
+        rgba(7, 11, 20, 0.92) 30%,
+        rgba(7, 11, 20, 0.70) 50%,
+        rgba(7, 11, 20, 0.30) 72%,
+        rgba(7, 11, 20, 0.12) 100%
+      );
+    }
+    @media (max-width: 767px) {
+      body.night-mode .hero-content-overlay {
+        background: linear-gradient(
+          to top,
+          rgba(7, 11, 20, 0.99) 0%,
+          rgba(7, 11, 20, 0.94) 42%,
+          rgba(7, 11, 20, 0.60) 68%,
+          rgba(7, 11, 20, 0.14) 88%,
+          transparent 100%
+        );
+      }
+    }
+    body.night-mode .bg-orb-1 {
+      background: radial-gradient(circle, rgba(56, 189, 248, 0.10) 0%, transparent 68%);
+    }
+    body.night-mode .bg-orb-2 {
+      background: radial-gradient(circle, rgba(99, 102, 241, 0.09) 0%, transparent 68%);
+    }
+    body.night-mode .bg-orb-3 {
+      background: radial-gradient(circle, rgba(6, 182, 212, 0.08) 0%, transparent 68%);
+    }
+
+    body.night-mode .appearance-toggle {
+      color: var(--text-secondary);
+      background: var(--surface);
+    }
+
+    body.night-mode .text-slate-900,
+    body.night-mode .text-slate-800 {
+      color: rgba(255, 255, 255, 0.95) !important;
+    }
+    body.night-mode .text-slate-600,
+    body.night-mode .text-slate-500,
+    body.night-mode .text-slate-700 {
+      color: rgba(203, 213, 225, 0.82) !important;
+    }
+    body.night-mode .text-slate-400 {
+      color: rgba(148, 163, 184, 0.62) !important;
+    }
+
+    body.night-mode .gradient-heading {
+      color: rgba(255, 255, 255, 0.95);
+    }
+
+    /* ==========================================================================
+       Animations & Motion
+       ========================================================================== */
+
+    @keyframes fadeInOut {
+      0%, 100% { opacity: 0; transform: translateY(4px); }
+      10%, 90% { opacity: 1; transform: translateY(0); }
+    }
+
+    .fade-in-out {
+      animation: fadeInOut 5s ease-in-out infinite;
+    }
+
+    @keyframes cardFadeIn {
+      from { opacity: 0; transform: translateY(24px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .animate-card-fade {
+      animation: cardFadeIn 0.7s var(--ease) forwards;
+    }
+
+    :root {
+      --reveal-duration: 0.7s;
+      --reveal-distance: 26px;
+      --reveal-ease: cubic-bezier(0.22, 1, 0.36, 1);
+    }
+
+    .reveal-hidden {
+      opacity: 0;
+      transform: translateY(var(--reveal-distance));
+      transition:
+        opacity var(--reveal-duration) var(--reveal-ease),
+        transform var(--reveal-duration) var(--reveal-ease);
+      transition-delay: var(--reveal-delay, 0ms);
+    }
+
+    .reveal-visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==========================================================================
+       Mobile Menu
+       ========================================================================== */
+
+    .mobile-menu {
+      transition: transform 0.4s var(--ease);
+      background: rgba(255, 255, 255, 0.90);
+      -webkit-backdrop-filter: blur(24px) saturate(170%);
+      backdrop-filter: blur(24px) saturate(170%);
+    }
+
+    body.night-mode .mobile-menu {
+      background: rgba(15, 23, 42, 0.92);
+    }
+
+    .mobile-menu.closed {
+      transform: translateX(-100%);
+    }
+
+    .mobile-menu.open {
+      transform: translateX(0);
+    }
+
+    .timeline-num {
+      min-width: 36px;
+    }
+
+
+
+    /* ==========================================================================
+       Responsive tweaks
+       ========================================================================== */
+
+    @media (max-width: 480px) {
+      .crystal-card {
+        border-radius: 22px;
+      }
+      .bg-orb {
+        opacity: 0.5;
+        filter: blur(60px);
+      }
+      .section-scroll-arrow {
+        display: none !important;
+      }
+    }
+
+    /* Mobile hero rows.
+       This used to be `.hero-copy .flex.flex-wrap.items-center`, which also matched
+       the tech-tag row and the greeting row (both carry `items-center`). Forcing them
+       to a column with `align-items: stretch` gave every tech tag â€” and both CTAs â€”
+       the full container width, so the tags rendered as 7 stacked solid bars instead
+       of a wrapped cloud. Scope the column stack to the CTA row only; the tag row
+       keeps its Tailwind `items-center` + `flex-wrap` behaviour and wraps naturally. */
+    @media (max-width: 767px) {
+      .hero-btn-row {
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .hero-btn-row > a {
+        width: 100%;
+      }
+    }
+
+    /* Accessibility: Reduced Motion */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: 0.01ms !important;
+        transition-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        scroll-behavior: auto !important;
+      }
+    }
+
+    @keyframes project-image-fade {
+      from { opacity: 0.35; }
+      to { opacity: 1; }
+    }
+
+    .project-image-fade {
+      animation: project-image-fade 650ms ease both;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .project-image-fade { animation: none; }
+    }
+  </style>
+</head>
+
+<body class="bg-bg-canvas text-slate-900 font-sans selection:bg-sky-500/20 selection:text-sky-900">
+
+  <!-- React Root Container -->
+  <div id="root"></div>
+
+  <script>
+    window.portfolioContent = {};
+
+    // The admin API is the source of truth; portfolio-content.json is the static
+    // fallback it publishes. (Previously this fetched 'portfolio-manifest.json',
+    // which never existed on disk or on the server -> a guaranteed 404 on every load.)
+    const MANIFEST_ENDPOINT = 'portfolio-admin/api_portfolio.php?action=manifest';
+    const STATIC_CONTENT = 'portfolio-content.json';
+
+    // Keep media paths working when the site is served from a subdirectory
+    // (for example, http://localhost/hamzaa.top/) as well as from the domain root.
+    const resolveMediaUrl = (value) => {
+      const url = String(value || '').trim();
+      if (!url) return '';
+      if (/^(?:[a-z][a-z0-9+.-]*:)?\/\//i.test(url) ||
+          /^(?:data|blob):/i.test(url) ||
+          url.startsWith('#')) {
+        return url;
+      }
+      return url.replace(/^\/+/, '');
+    };
+
+    // Tolerates both the API shape and the published static shape:
+    //   images:  {hero,about}            OR site_images: [{slot,image_url}]
+    //   skills:  [{name,img}]            OR [{name,icon}]
+    //   projects:[{name,desc,images,demoUrl}] OR [{title,description,screenshots,url}]
+    //   about:   [{title,text}]          OR timeline:[{title,description}]
+    const normalizeContent = (data) => {
+      if (!data || typeof data !== 'object') return null;
+
+      const imageMap = {};
+      if (Array.isArray(data.site_images)) {
+        data.site_images.forEach(image => { imageMap[image.slot] = image.image_url; });
+      }
+      const images = data.images || {};
+
+      return {
+        images: {
+          hero: resolveMediaUrl(images.hero || imageMap.hero || ''),
+          about: resolveMediaUrl(images.about || imageMap.about || '')
+        },
+        skills: (data.skills || []).map(skill => ({
+          name: skill.name,
+          img: resolveMediaUrl(skill.img || skill.icon || '')
+        })),
+        projects: (data.projects || []).map(project => ({
+          name: project.name || project.title || '',
+          desc: project.desc || project.description || '',
+          images: (project.images || project.screenshots || [])
+            .map(image => (typeof image === 'string' ? image : image.image_url))
+            .filter(Boolean)
+            .map(resolveMediaUrl),
+          demoUrl: project.demoUrl || project.url || '#'
+        })),
+        about: (data.about || data.timeline || []).map(item => ({
+          title: item.title || '',
+          text: item.text || item.description || ''
+        }))
+      };
+    };
+
+    const applyContent = (data, staticFallback) => {
+      const normalized = normalizeContent(data);
+      if (!normalized) return;
+
+      // Some existing admin records publish only a bare filename (for example,
+      // "news-home.png"). Those resolve from the site root and 404. When a
+      // project matches the published static content, use its known-good image
+      // paths while keeping the API's project title, description, and URL.
+      const fallback = normalizeContent(staticFallback);
+      // Fold the HSC achievement into the existing education entry, including
+      // when an older API timeline still contains the standalone milestone.
+      const about = (normalized.about.length ? normalized.about : (fallback?.about || []))
+        .filter(item => !/higher secondary certificate|\bhsc\b/i.test(item.title || ''));
+      const education = about.find(item => /^education\b/i.test((item.title || '').trim()));
+      if (education) {
+        education.text = 'I completed my Higher Secondary Certificate (HSC) in the Arts stream in 2026. Now that Iâ€™m more financially stable, I plan to enroll in a diploma in Computer Science.';
+      }
+      normalized.about = about;
+
+      if (fallback?.projects?.length) {
+        const projectKey = name => String(name || '').toLowerCase().replace(/[^a-z0-9]/g, '');
+        const fallbackProjects = new Map(
+          fallback.projects.map(project => [projectKey(project.name), project])
+        );
+
+        normalized.projects = normalized.projects.map(project => {
+          const hasBareFilenames = project.images.some(image =>
+            image && !image.includes('/') && !/^(?:[a-z][a-z0-9+.-]*:)?\/\//i.test(image)
+          );
+          const fallbackProject = fallbackProjects.get(projectKey(project.name));
+
+          if (!hasBareFilenames) return project;
+          if (fallbackProject?.images?.length) {
+            return { ...project, images: fallbackProject.images };
+          }
+
+          // Keep any usable API paths, but don't request bare filenames known to
+          // resolve to 404s at the site root when no static match is available.
+          return {
+            ...project,
+            images: project.images.filter(image =>
+              image.includes('/') || /^(?:[a-z][a-z0-9+.-]*:)?\/\//i.test(image)
+            )
+          };
+        });
+      }
+
+      // Keep Doc-Flip first even when the admin API returns a project list that
+      // predates the static portfolio data.
+      const docFlip = fallback?.projects?.find(project =>
+        String(project.name || '').toLowerCase().replace(/[^a-z0-9]/g, '') === 'docflip'
+      );
+      if (docFlip) {
+        normalized.projects = [
+          docFlip,
+          ...normalized.projects.filter(project =>
+            String(project.name || '').toLowerCase().replace(/[^a-z0-9]/g, '') !== 'docflip'
+          )
+        ];
+      }
+
+      window.portfolioContent = normalized;
+      window.dispatchEvent(new Event('portfolio-content-ready'));
+    };
+
+    const fetchJson = (url) => fetch(url, { cache: 'no-store' })
+      .then(response => response.ok ? response.json() : null)
+      .catch(() => null);
+
+    Promise.all([fetchJson(MANIFEST_ENDPOINT), fetchJson(STATIC_CONTENT)])
+      .then(([manifest, staticContent]) => {
+        // The API returns an {error} / empty object when the DB is unavailable,
+        // so fall back to the published JSON rather than rendering blank content.
+        const hasData = manifest && (
+          Object.keys(manifest.images || {}).length ||
+          (manifest.skills || []).length ||
+          (manifest.projects || []).length
+        );
+        applyContent(hasData ? manifest : staticContent, staticContent);
+      })
+      .catch(() => {});
+  </script>
+
+  <script type="text/babel">
+
+    const greetings = [
+      "Have a good day", "Que tengas un buen día", "Passe une bonne journée", "Hab einen guten Tag",
+      "Buona giornata", "良い一日を", "좋은 하루 되세요", "祝你有美好的一天", "Tenha um bom dia", "Хорошего дня",
+      "आपका दिन अच्छा हो", "أتمنى لك يوماً سعيداً", "שיהיה לך יום טוב", "তোমার দিনটি ভালো হোক", "ਤੁਹਾਡਾ ਦਿਨ ਚੰਗਾ ਹੋਵੇ",
+      "உங்களுக்கு ஒரு நல்ல நாள் இருக்கட்டும்", "ขอให้มีวันที่ดี", "Να έχεις μια καλή μέρα"
+    ];
+
+    const Hero = () => {
+      const [currentGreeting, setCurrentGreeting] = React.useState(0);
+
+      React.useEffect(() => {
+        const interval = setInterval(() => {
+          setCurrentGreeting(prev => (prev + 1) % greetings.length);
+        }, 5000);
+        return () => clearInterval(interval);
+      }, []);
+
+      return (
+        <section
+          id="home"
+          className="relative w-full overflow-hidden flex items-center justify-start"
+        >
+          {/* Ambient Glow Orbs */}
+          <div className="hero-ambient-glow hero-ambient-glow--cyan" aria-hidden="true"></div>
+          <div className="hero-ambient-glow hero-ambient-glow--indigo" aria-hidden="true"></div>
+
+          {/* Hero portrait background */}
+          <div className="hero-background" aria-hidden="true">
+            {/* React 18 passes lowercase/unknown attributes straight through, whereas
+                camelCase `fetchPriority` logs a "React does not recognize the
+                fetchPriority prop" console error on every page load. */}
+            <img
+              className="hero-image"
+              src={window.portfolioContent?.images?.hero || "assets/images/profile/hero-image.webp"}
+              alt="Hamza â€” Full Stack Web Developer"
+              width="665"
+              height="1024"
+              fetchpriority="high"
+              decoding="async"
+            />
+            <div className="hero-content-overlay" aria-hidden="true"></div>
+          </div>
+
+          <article className="hero-copy relative z-10 animate-card-fade">
+            <div className="relative z-10 flex flex-col items-center md:items-start text-center md:text-left">
+              {/* Greeting pill + icon marquee carousel side-by-side */}
+              <div className="flex items-center justify-center md:justify-start gap-5 mb-6 flex-wrap">
+                {/* International Greeting Badge */}
+                <div className="droplet-btn glass-pill inline-flex items-center gap-2.5 px-5 py-2 shadow-sm">
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-400 animate-pulse relative z-10"></span>
+                  <span className="text-xs sm:text-sm md:text-base font-medium text-slate-100 fade-in-out text-center relative z-10">
+                    {greetings[currentGreeting]}
+                  </span>
+                </div>
+                {/* Icon marquee pill */}
+                {(() => {
+                  // Self-hosted SVGs (assets/icons) â€” no third-party 404s, no CDN dependency.
+                  // Rendered white by the `filter: brightness(0) invert(1)` rule on .icon-marquee-track img.
+                  const icons = [
+                    { src: 'assets/icons/openai.svg', alt: 'OpenAI' },
+                    { src: 'assets/icons/anthropic.svg', alt: 'Anthropic' },
+                    { src: 'assets/icons/google.svg', alt: 'Google' },
+                    { src: 'assets/icons/meta.svg', alt: 'Meta' },
+                    { src: 'assets/icons/huggingface.svg', alt: 'Hugging Face' },
+                    { src: 'assets/icons/mistralai.svg', alt: 'Mistral' },
+                    { src: 'assets/icons/perplexity.svg', alt: 'Perplexity' },
+                    { src: 'assets/icons/javascript.svg', alt: 'JavaScript' },
+                    { src: 'assets/icons/typescript.svg', alt: 'TypeScript' },
+                    { src: 'assets/icons/python.svg', alt: 'Python' },
+                    { src: 'assets/icons/php.svg', alt: 'PHP' },
+                    { src: 'assets/icons/go.svg', alt: 'Go' },
+                    { src: 'assets/icons/rust.svg', alt: 'Rust' },
+                    { src: 'assets/icons/kotlin.svg', alt: 'Kotlin' },
+                    { src: 'assets/icons/swift.svg', alt: 'Swift' },
+                    { src: 'assets/icons/react.svg', alt: 'React' },
+                    { src: 'assets/icons/vuedotjs.svg', alt: 'Vue' },
+                    { src: 'assets/icons/nextdotjs.svg', alt: 'Next.js' },
+                    { src: 'assets/icons/laravel.svg', alt: 'Laravel' },
+                    { src: 'assets/icons/docker.svg', alt: 'Docker' },
+                    { src: 'assets/icons/tensorflow.svg', alt: 'TensorFlow' },
+                    { src: 'assets/icons/pytorch.svg', alt: 'PyTorch' },
+                  ];
+                  const doubled = [...icons, ...icons];
+                  return (
+                    <div className="hero-floating-badge" aria-label="Tech stack icon carousel">
+                      <div className="icon-marquee-track">
+                        {doubled.map((icon, i) => (
+                          <img key={i} src={icon.src} alt={icon.alt} title={icon.alt} width="22" height="22" loading="lazy" />
+                        ))}
+                      </div>
+                    </div>
+                  );
+                })()}
+              </div>
+
+              <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold tracking-tight mb-4 px-0 leading-[1.08] text-white">
+                Hi! my name is{" "}
+                <span className="gradient-text-hero inline-block font-extrabold">Hamza</span>
+                <br />
+                <span className="text-slate-100">Full Stack Web Developer</span>
+              </h1>
+
+              <h3 className="text-base sm:text-lg md:text-xl text-slate-200/90 max-w-xl mb-6 px-0 font-normal leading-relaxed">
+                I build simple, accessible, high-performance web applications that users enjoy and businesses trust.
+              </h3>
+
+              {/* Core tech tags */}
+              <div className="hero-tech-pills flex flex-wrap items-center justify-center md:justify-start gap-2 mb-7">
+                {['PHP', 'Laravel', 'JavaScript', 'React.js', 'Vue.js', 'MySQL', 'Tailwind CSS'].map(tech => (
+                  <span key={tech} className="hero-tech-pill">{tech}</span>
+                ))}
+              </div>
+
+              {/* Action Buttons: 3D Water Droplet Buttons.
+                  `.hero-btn-row` scopes the mobile column stack to this row only â€” see
+                  the `@media (max-width: 767px)` rule near the end of the stylesheet. */}
+              <div className="hero-btn-row flex flex-wrap items-center justify-center md:justify-start gap-4">
+                <a
+                  href="#projects"
+                  onClick={e => {
+                    e.preventDefault();
+                    const el = document.getElementById('projects');
+                    if (el) {
+                      const y = el.getBoundingClientRect().top + window.scrollY - 90;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                  }}
+                  className="droplet-btn inline-flex items-center gap-2.5 text-base md:text-lg font-semibold py-3.5 px-8 group"
+                >
+                  <span className="relative z-10">Explore Projects</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-sky-300 group-hover:translate-y-0.5 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                  </svg>
+                </a>
+                <a
+                  href="#contact"
+                  onClick={e => {
+                    e.preventDefault();
+                    const el = document.getElementById('contact');
+                    if (el) {
+                      const y = el.getBoundingClientRect().top + window.scrollY - 90;
+                      window.scrollTo({ top: y, behavior: 'smooth' });
+                    }
+                  }}
+                  className="droplet-btn droplet-btn-secondary inline-flex items-center gap-2.5 text-base md:text-lg font-semibold py-3.5 px-8 group"
+                >
+                  <span className="relative z-10">Get in Touch</span>
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-sky-400 group-hover:scale-110 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
+                  </svg>
+                </a>
+              </div>
+
+              {/* Social icons row */}
+              <div className="mt-6 flex justify-center md:justify-start">
+                <ContactIcons />
+              </div>
+            </div>
+          </article>
+
+
+          {/* Down-arrow: section-level, bottom-right */}
+          <a
+            href="#skills"
+            className="section-scroll-arrow absolute bottom-6 right-6 md:bottom-8 md:right-8 z-20 droplet-btn text-slate-200 hover:text-sky-300 p-3 md:p-3.5 flex items-center justify-center"
+            aria-label="Go to Skills"
+            onClick={e => {
+              e.preventDefault();
+              const el = document.getElementById('skills');
+              if (el) {
+                const y = el.getBoundingClientRect().top + window.scrollY - 90;
+                window.scrollTo({ top: y, behavior: 'smooth' });
+              }
+            }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+            </svg>
+          </a>
+        </section>
+      );
+    };
+
+    const Navbar = () => {
+    const [isMenuOpen, setIsMenuOpen] = React.useState(false);
+    const [isNightMode, setIsNightMode] = React.useState(() => {
+      try {
+        return window.localStorage.getItem('night-mode') === 'true';
+      } catch {
+        return false;
+      }
+    });
+    const closeMenu = () => setIsMenuOpen(false);
+
+      React.useEffect(() => {
+        document.body.classList.toggle('night-mode', isNightMode);
+        try {
+          window.localStorage.setItem('night-mode', String(isNightMode));
+        } catch {
+          // The theme still works for this visit when browser storage is unavailable.
+        }
+      }, [isNightMode]);
+
+      const navLinks = [
+        { name: "Home", href: "#home" },
+        { name: "Skills", href: "#skills" },
+        { name: "Projects", href: "#projects" },
+        { name: "About", href: "#about" },
+        { name: "Contact", href: "#contact" },
+        { name: "Download Resume", href: "#Resume" },
+      ];
+
+      return (
+        <>
+          {/* Floating Pill Header with Single Line Non-Wrapping Alignment */}
+          <nav className="floating-nav">
+            <div className="flex justify-between items-center w-full relative z-10 flex-nowrap gap-4">
+              <a href="#home" className="text-sm md:text-base font-bold tracking-tight text-slate-900 flex items-center gap-2.5 flex-shrink-0 whitespace-nowrap group" aria-label="Hamzaa.top home">
+                <img src="assets/icons/hamza-logo.jpg" alt="Hamzaa.top" width="36" height="36" className="h-9 w-9 rounded-lg object-contain transition-transform group-hover:scale-105" />
+                <span>Hamza <span className="text-slate-600 font-normal hidden sm:inline">| Full Stack Dev</span></span>
+              </a>
+
+              <ul className="hidden md:flex items-center space-x-1 lg:space-x-2 flex-nowrap flex-shrink min-w-0">
+                {navLinks.map((link, idx) => (
+                  <li key={idx} className="flex-shrink-0">
+                    <a
+                      href={link.href}
+                      onClick={e => {
+                        e.preventDefault();
+                        const targetId = link.href.replace('#', '');
+                        const el = document.getElementById(targetId);
+                        if (el) {
+                          const y = el.getBoundingClientRect().top + window.scrollY - 90;
+                          window.scrollTo({ top: y, behavior: 'smooth' });
+                        }
+                      }}
+                      className="text-slate-700 hover:text-sky-700 hover:bg-sky-50/80 px-2 lg:px-3.5 py-1.5 rounded-full transition-all duration-200 whitespace-nowrap text-xs lg:text-sm font-medium inline-block"
+                    >
+                      {link.name}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+
+              <div className="appearance-controls">
+                <button
+                  type="button"
+                  className="appearance-toggle"
+                  aria-label={isNightMode ? "Switch to day mode" : "Switch to night mode"}
+                  aria-pressed={isNightMode}
+                  onClick={() => setIsNightMode(value => !value)}
+                >
+                  <span aria-hidden="true">{isNightMode ? "☀️" : "🌙"}</span>
+                  <span>{isNightMode ? "Day" : "Night"}</span>
+                </button>
+              </div>
+
+              <button
+                className="md:hidden text-slate-700 hover:text-sky-700 p-1.5 rounded-lg focus:outline-none hover:bg-sky-50 flex-shrink-0"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  {isMenuOpen ? (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                  ) : (
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                  )}
+                </svg>
+              </button>
+            </div>
+          </nav>
+
+          {/* Mobile Overlay */}
+          {isMenuOpen && (
+            <div className="fixed inset-0 bg-slate-950/40 backdrop-blur-sm z-40 md:hidden" onClick={closeMenu}></div>
+          )}
+
+          {/* Mobile Menu Drawer */}
+          <div className={`mobile-menu fixed top-0 left-0 h-full w-72 bg-white/95 backdrop-blur-2xl border-r border-slate-200 z-50 ${isMenuOpen ? 'open' : 'closed'} md:hidden p-6 flex flex-col shadow-2xl`}>
+            <div className="flex justify-between items-center mb-8 border-b border-slate-200 pb-4">
+              <h2 className="text-lg font-bold text-slate-900 gradient-heading">Menu</h2>
+              <button onClick={closeMenu} className="text-slate-500 hover:text-slate-900 p-1 rounded-lg hover:bg-slate-100" aria-label="Close menu">
+                <svg className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
+            </div>
+
+            <ul className="space-y-2 flex-1">
+              {navLinks.map((link, idx) => (
+                <li key={idx}>
+                  <a
+                    href={link.href}
+                    className="block py-2.5 px-4 rounded-xl text-slate-700 hover:text-sky-700 hover:bg-sky-50 font-medium transition"
+                    onClick={e => {
+                      closeMenu();
+                      e.preventDefault();
+                      const targetId = link.href.replace('#', '');
+                      const el = document.getElementById(targetId);
+                      if (el) {
+                        const y = el.getBoundingClientRect().top + window.scrollY - 90;
+                        window.scrollTo({ top: y, behavior: 'smooth' });
+                      }
+                    }}
+                  >
+                    {link.name}
+                  </a>
+                </li>
+              ))}
+            </ul>
+
+            <div className="pt-6 border-t border-slate-200 flex justify-center">
+              <ContactIcons />
+            </div>
+          </div>
+        </>
+      );
+    };
+
+    const Skills = () => {
+      const defaultSkillList = [
+        { name: "PHP", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/php/php-original.svg" },
+        { name: "Laravel", img: "https://static.cdnlogo.com/logos/l/57/laravel.svg" },
+        { name: "JavaScript", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" },
+        { name: "React.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" },
+        { name: "Vue.js", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/vuejs/vuejs-original.svg" },
+        { name: "MySQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/mysql/mysql-original.svg" },
+        { name: "SQLite", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/sqlite/sqlite-original.svg" },
+        { name: "PostgreSQL", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" },
+        { name: "Tailwind CSS", img: "https://static.cdnlogo.com/logos/t/34/tailwind-css.svg" },
+        { name: "Bootstrap", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/bootstrap/bootstrap-original.svg" },
+        { name: "Docker", img: "https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" },
+        { name: "AI Problem Solving", img: "https://cdn-icons-png.flaticon.com/512/4712/4712027.png" }
+      ];
+      const skillList = window.portfolioContent?.skills?.length
+        ? window.portfolioContent.skills
+        : defaultSkillList;
+
+      return (
+        <section id="skills" className="py-6 md:py-8 relative w-full">
+          <div className="crystal-card p-8 sm:p-10 md:p-14 lg:p-16 relative z-10">
+            <div className="text-center mb-10 md:mb-14 relative z-10">
+              <h2 className="reveal-hidden text-3xl sm:text-4xl md:text-5xl font-extrabold gradient-heading mb-3" data-reveal>Skills</h2>
+              <p className="reveal-hidden text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto" data-reveal>
+                Technologies and frameworks I utilize to craft modern web applications
+              </p>
+            </div>
+
+            {/* Expansive 6-Column Grid on Large Screens */}
+            <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-6 gap-4 sm:gap-5 md:gap-6 relative z-10">
+              {skillList.map((skill, index) => (
+                <div
+                  key={index}
+                  className="skill-mini-card reveal-hidden p-5 sm:p-6 text-center flex flex-col items-center justify-center group"
+                  data-reveal
+                  style={{ "--reveal-delay": `${index * 55}ms` }}
+                >
+                  <div className="h-14 sm:h-16 md:h-[4.5rem] flex items-center justify-center mb-3.5 transition-transform duration-300 group-hover:scale-110 relative z-10">
+                    <img src={resolveMediaUrl(skill.img)} alt={skill.name} width="64" height="64" loading="lazy" decoding="async" className="h-11 sm:h-[3.25rem] md:h-14 object-contain filter drop-shadow-sm" />
+                  </div>
+                  <p className="text-xs sm:text-sm md:text-base font-semibold text-slate-800 group-hover:text-sky-700 transition-colors relative z-10">
+                    {skill.name}
+                  </p>
+                </div>
+              ))}
+            </div>
+
+            {/* Scroll down button */}
+            <a
+              href="#projects"
+              className="section-scroll-arrow skills-scroll-arrow absolute right-4 md:right-8 z-20 droplet-btn text-slate-700 hover:text-sky-600 p-2.5 md:p-3 flex items-center justify-center"
+              aria-label="Go to Projects"
+              onClick={e => {
+                e.preventDefault();
+                const el = document.getElementById('projects');
+                if (el) {
+                  const y = el.getBoundingClientRect().top + window.scrollY - 90;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+              </svg>
+            </a>
+          </div>
+        </section>
+      );
+    };
+
+    const projectData = [
+      {
+        name: "Doc-Flip",
+        desc: "Free document conversion: turn DOCX, PDF, XLSX, or public Google Docs into downloadable formats.",
+        images: ["assets/images/projects/doc-flip/1.png", "assets/images/projects/doc-flip/2.png", "assets/images/projects/doc-flip/3.png", "assets/images/projects/doc-flip/4.png", "assets/images/projects/doc-flip/5.png"],
+        demoUrl: "https://kitbin.top"
+      },
+      {
+        name: "News-Site",
+        desc: "Dynamic news site with news, user, and category management, built with raw PHP.",
+        images: ["assets/images/projects/news-site/news-site-home.png", "assets/images/projects/news-site/news-site-add-user.png", "assets/images/projects/news-site/news-site-categories.png", "assets/images/projects/news-site/news-site-login.png", "assets/images/projects/news-site/news-site-user-management.png", "assets/images/projects/news-site/news-site-management.png", "assets/images/projects/news-site/news-site-edit.png"],
+        demoUrl: "https://hamzaa.top/news-site"
+      },
+      {
+        name: "E-commerce site",
+        desc: "Full dynamic shopping site made with PHP have product management, user authentication, and payment integration.",
+        images: ["assets/images/projects/shopping-project/shopping-project-home.png", "assets/images/projects/shopping-project/shopping-project-signup.png", "assets/images/projects/shopping-project/shopping-project-admin-login.png", "assets/images/projects/shopping-project/shopping-project-admin-panel.png", "assets/images/projects/shopping-project/shopping-project-product-management.png", "assets/images/projects/shopping-project/shopping-project-checkout.png", "assets/images/projects/shopping-project/shopping-project-order.png"],
+        demoUrl: "https://hamzaa.top/shopping-project"
+      },
+      {
+        name: "Student Database Management",
+        desc: "Student database management system for managing records, classes, results, and attendance.",
+        images: ["assets/images/projects/student-db/student-db-home.png", "assets/images/projects/student-db/student-db-records.png", "assets/images/projects/student-db/student-db-results.png"],
+        demoUrl: "https://hamzaa.top/student-db"
+      },
+      {
+        name: "Dashboard",
+        desc: "This dynamic dashboard built with Laravel.",
+        images: ["assets/images/projects/dashboard/dashboard-overview.png", "assets/images/projects/dashboard/dashboard-home.png", "assets/images/projects/dashboard/dashboard-profile.png", "assets/images/projects/dashboard/dashboard-profile-details.png", "assets/images/projects/dashboard/dashboard-users.png", "assets/images/projects/dashboard/dashboard-content.png", "assets/images/projects/dashboard/dashboard-analytics.png", "assets/images/projects/dashboard/dashboard-settings.png", "assets/images/projects/dashboard/dashboard-management.png"],
+        demoUrl: "https://hamzaa.top/portfolio-admin/"
+      },
+      {
+        name: "Unique ID Generator",
+        desc: "Generates a new ID each time â€” never repeats a previous one.",
+        images: ["assets/images/projects/id-gen/unique-id-generator-oop.png"],
+        demoUrl: "https://hamzaa.top/id-gen"
+      }
+    ];
+
+    const ProjectCard = ({ project, onOpenPreview, cardIndex }) => {
+      const [current, setCurrent] = React.useState(0);
+      const total = project.images.length;
+
+      React.useEffect(() => {
+        if (total < 2) return undefined;
+        const interval = window.setInterval(() => {
+          setCurrent(imageIndex => (imageIndex + 1) % total);
+        }, 4500);
+        return () => window.clearInterval(interval);
+      }, [total]);
+      
+      const glowVariantClasses = [
+        "project-card-purple",
+        "project-card-sky",
+        "project-card-cyan"
+      ];
+      const glowClass = glowVariantClasses[cardIndex % glowVariantClasses.length];
+
+      return (
+        <div className={`crystal-card ${glowClass} reveal-hidden p-5 sm:p-6 md:p-7 rounded-3xl flex flex-col h-full transition-all duration-300 hover:scale-[1.015]`} data-reveal style={{ "--reveal-delay": `${cardIndex * 90}ms` }}>
+          {/* Image Showcase Container */}
+          <div className="relative rounded-2xl overflow-hidden bg-slate-100/70 border border-slate-200/80 group shadow-inner relative z-10">
+            {total > 0 ? (
+              <img
+                key={`${project.name}-${current}`}
+                src={resolveMediaUrl(project.images[current])}
+                alt={project.name}
+                width="1200"
+                height="675"
+                loading="lazy"
+                decoding="async"
+                onClick={() => onOpenPreview(project, current)}
+                title="Click to view full preview"
+                className="project-image-fade w-full h-56 sm:h-64 md:h-72 object-contain cursor-pointer hover:opacity-95 transition-opacity"
+              />
+            ) : (
+              <div className="w-full h-56 sm:h-64 md:h-72 flex items-center justify-center text-sm text-slate-500">
+                Screenshots unavailable
+              </div>
+            )}
+
+            {/* Navigation Arrows for Multiple Images: Water Droplets */}
+            {total > 1 && (
+              <>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrent((current - 1 + total) % total);
+                  }}
+                  className="absolute top-1/2 left-2.5 -translate-y-1/2 droplet-btn glass-pill p-2.5 rounded-full z-10"
+                  aria-label="Previous image"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
+                  </svg>
+                </button>
+                <button
+                  type="button"
+                  onClick={(e) => {
+                    e.stopPropagation();
+                    setCurrent((current + 1) % total);
+                  }}
+                  className="absolute top-1/2 right-2.5 -translate-y-1/2 droplet-btn glass-pill p-2.5 rounded-full z-10"
+                  aria-label="Next image"
+                >
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                  </svg>
+                </button>
+              </>
+            )}
+
+            {/* Counter Tag: Water Droplet Pill */}
+            {total > 1 && (
+              <div className="absolute top-3 right-3 droplet-btn glass-pill text-slate-800 font-semibold text-xs px-3 py-1 pointer-events-none">
+                <span className="relative z-10">{current + 1} / {total}</span>
+              </div>
+            )}
+
+          </div>
+
+          <div className="mt-3 rounded-xl bg-white/90 backdrop-blur-md text-slate-700 text-xs sm:text-sm leading-relaxed p-4 border border-slate-200 shadow-sm">
+            {project.desc}
+          </div>
+
+          <h3 className="text-xl sm:text-2xl font-bold text-slate-900 mt-5 mb-3.5 relative z-10">
+            {project.name}
+          </h3>
+
+          <div className="mt-auto pt-3 flex justify-start relative z-10">
+            <a
+              href={project.demoUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="droplet-btn inline-flex items-center gap-2.5 text-sm md:text-base font-semibold py-2.5 px-6 group"
+              aria-label={`See ${project.name} in action`}
+            >
+              <span className="relative z-10">See It in Action</span>
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 text-sky-600 group-hover:translate-x-1 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      );
+    };
+
+    const Projects = () => {
+      const [preview, setPreview] = React.useState(null);
+      const projects = window.portfolioContent?.projects?.length
+        ? window.portfolioContent.projects
+        : projectData;
+
+      const handleOpenPreview = (project, imageIndex) => {
+        setPreview({ project, imageIndex });
+      };
+
+      const handleClosePreview = () => {
+        setPreview(null);
+      };
+
+      const handlePrevImage = (e) => {
+        if (e) e.stopPropagation();
+        if (!preview) return;
+        const total = preview.project.images.length;
+        setPreview(prev => ({
+          ...prev,
+          imageIndex: (prev.imageIndex - 1 + total) % total
+        }));
+      };
+
+      const handleNextImage = (e) => {
+        if (e) e.stopPropagation();
+        if (!preview) return;
+        const total = preview.project.images.length;
+        setPreview(prev => ({
+          ...prev,
+          imageIndex: (prev.imageIndex + 1) % total
+        }));
+      };
+
+      React.useEffect(() => {
+        const handleKeyDown = (e) => {
+          if (!preview) return;
+          if (e.key === 'Escape') {
+            handleClosePreview();
+          } else if (e.key === 'ArrowLeft') {
+            handlePrevImage();
+          } else if (e.key === 'ArrowRight') {
+            handleNextImage();
+          }
+        };
+
+        if (preview) {
+          document.body.style.overflow = 'hidden';
+          window.addEventListener('keydown', handleKeyDown);
+        } else {
+          document.body.style.overflow = '';
+        }
+
+        return () => {
+          document.body.style.overflow = '';
+          window.removeEventListener('keydown', handleKeyDown);
+        };
+      }, [preview]);
+
+      return (
+        <section id="projects" className="py-6 md:py-8 relative w-full">
+          <div className="crystal-card p-8 sm:p-10 md:p-14 lg:p-16 relative z-10">
+            <div className="text-center mb-10 md:mb-14 relative z-10">
+              <h2 className="reveal-hidden text-3xl sm:text-4xl md:text-5xl font-extrabold gradient-heading mb-3" data-reveal>Projects</h2>
+              <p className="reveal-hidden text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto" data-reveal>
+                A selection of web applications, systems, and dashboards Iâ€™ve built
+              </p>
+            </div>
+
+            {/* Expansive Project Grid (3 Columns on Large Displays) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-7 relative z-10">
+              {projects.map((project, index) => (
+                <ProjectCard
+                  key={index}
+                  project={project}
+                  cardIndex={index}
+                  onOpenPreview={handleOpenPreview}
+                />
+              ))}
+            </div>
+
+            {/* Scroll Down Button */}
+            <a
+              href="#about"
+              className="section-scroll-arrow projects-scroll-arrow absolute right-4 md:right-8 z-20 droplet-btn text-slate-700 hover:text-sky-600 p-2.5 md:p-3 flex items-center justify-center"
+              aria-label="Go to About Me"
+              onClick={e => {
+                e.preventDefault();
+                const el = document.getElementById('about');
+                if (el) {
+                  const heading = el.querySelector('h2');
+                  const target = heading || el;
+                  const y = target.getBoundingClientRect().top + window.scrollY - 90;
+                  window.scrollTo({ top: y, behavior: 'smooth' });
+                }
+              }}
+            >
+              <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+              </svg>
+            </a>
+          </div>
+
+          {/* Full Screen Image Preview Lightbox Modal */}
+          {preview && (
+            <div
+              className="fixed inset-0 z-[2000] bg-slate-950/85 backdrop-blur-xl flex items-center justify-center p-4 select-none animate-card-fade"
+              onClick={handleClosePreview}
+            >
+              {/* Close Button X in Top Right: Droplet Bead */}
+              <button
+                type="button"
+                onClick={(e) => {
+                  e.stopPropagation();
+                  handleClosePreview();
+                }}
+                className="absolute top-5 right-5 md:top-8 md:right-8 droplet-btn glass-pill w-11 h-11 md:w-12 md:h-12 flex items-center justify-center text-xl font-bold z-50 text-slate-800 hover:text-sky-600"
+                aria-label="Close full preview"
+              >
+                <span className="relative z-10">âœ•</span>
+              </button>
+
+              {/* Prev Button in Modal: Droplet Bead */}
+              {preview.project.images.length > 1 && (
+                <button
+                  type="button"
+                  onClick={handlePrevImage}
+                  className="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 droplet-btn glass-pill p-3.5 text-lg md:text-2xl z-50 text-slate-800 hover:text-sky-600"
+                  aria-label="Previous image"
+                >
+                  <span className="relative z-10">â—€</span>
+                </button>
+              )}
+
+              {/* Full Image Container */}
+              <div
+                className="relative max-w-[94vw] max-h-[88vh] flex flex-col items-center justify-center"
+                onClick={(e) => e.stopPropagation()}
+              >
+                <img
+                  src={resolveMediaUrl(preview.project.images[preview.imageIndex])}
+                  alt={`${preview.project.name} screenshot preview`}
+                  width="1200"
+                  height="675"
+                  decoding="async"
+                  className="max-w-full max-h-[80vh] object-contain rounded-2xl shadow-2xl border border-white/20 bg-black/40"
+                />
+                <div className="mt-4 flex items-center gap-3">
+                  <span className="droplet-btn glass-pill text-xs sm:text-sm md:text-base font-semibold px-5 py-2">
+                    <span className="relative z-10 text-slate-900">{preview.project.name} {preview.project.images.length > 1 && `(${preview.imageIndex + 1} / ${preview.project.images.length})`}</span>
+                  </span>
+                </div>
+              </div>
+
+              {/* Next Button in Modal: Droplet Bead */}
+              {preview.project.images.length > 1 && (
+                <button
+                  type="button"
+                  onClick={handleNextImage}
+                  className="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 droplet-btn glass-pill p-3.5 text-lg md:text-2xl z-50 text-slate-800 hover:text-sky-600"
+                  aria-label="Next image"
+                >
+                  <span className="relative z-10">â–¶</span>
+                </button>
+              )}
+            </div>
+          )}
+        </section>
+      );
+    };
+
+    const About = () => {
+      const defaultTimeline = [
+        { title: 'Born and raised in Dhaka', text: 'I grew up in Dhaka and completed my SSC 10th grade in 2019.' },
+        { title: 'Started working in 2019', text: 'Due to family financial needs, I joined the workforce right after SSC and have been working continuously from 2019 until October 2025.' },
+        { title: 'Current job', text: 'I work as a Junior Operator at a water treatment plant â€” a role that taught me responsibility, time management, and hands-on problem solving.' },
+        { title: 'A lifelong interest in tech', text: 'Iâ€™ve loved technology since childhood â€” from Nokia 3310/5310 phones to using the internet on my dadâ€™s phone before 3G/4G. I got my first computer at eight, and that curiosity never left.' },
+        { title: 'Learning programming', text: 'I began studying programming seriously in 2023 while working full-time, following tutorials and building small projects in my free time.' },
+        { title: 'Education â€” now and next steps', text: 'I completed my Higher Secondary Certificate (HSC) in the Arts stream in 2026. Now that Iâ€™m more financially stable, I plan to enroll in a diploma in Computer Science.' },
+        { title: 'Continuous learner', text: 'Because technology keeps changing, Iâ€™m always learning â€” from front-end and back-end basics to new frameworks and tools. I love exploring everything about tech.' },
+        { title: 'Future interests', text: 'Iâ€™m particularly excited to study LLMs, AI, and Python to expand my skill set and work on smarter, more useful applications.' },
+        { title: 'Career goal', text: 'My dream is to become a full-time programmer, building practical, user-friendly web applications that solve real problems.' }
+      ];
+      const timeline = window.portfolioContent?.about?.length
+        ? window.portfolioContent.about
+        : defaultTimeline;
+
+      return (
+        <section id="about" className="py-6 md:py-8 relative w-full">
+          <div className="crystal-card p-8 sm:p-10 md:p-14 lg:p-16 relative z-10">
+            <h2 className="reveal-hidden text-3xl sm:text-4xl md:text-5xl font-extrabold gradient-heading mb-8 text-left relative z-10" data-reveal>About Me</h2>
+
+            {/* Avatar showcase */}
+            <div className="flex justify-center mb-10 relative z-10">
+              <a href={window.portfolioContent?.images?.about || "assets/images/profile/avatar.jpg"} target="_blank" rel="noopener noreferrer" aria-label="Open full avatar" className="group">
+                <img
+                  src={window.portfolioContent?.images?.about || "assets/images/profile/avatar.jpg"}
+                  alt="Hamza avatar"
+                  width="1200"
+                  height="800"
+                  loading="lazy"
+                  decoding="async"
+                  className="reveal-hidden w-full max-w-[1300px] h-auto sm:max-h-[55vh] md:max-h-[65vh] object-contain rounded-3xl border border-slate-200/90 shadow-xl transition-all duration-300 group-hover:border-sky-400/60 bg-white"
+                  data-reveal
+                />
+              </a>
+            </div>
+
+            {/* Timeline list */}
+            <ol className="space-y-4 md:space-y-5 relative z-10">
+              {timeline.map((item, idx) => (
+                <li
+                  key={idx}
+                  className="reveal-hidden bg-white/70 hover:bg-white/95 border border-slate-200/80 hover:border-sky-300/60 p-5 sm:p-6 md:p-7 rounded-2xl shadow-sm md:flex md:items-start md:gap-6 transition-all duration-200"
+                  data-reveal
+                  style={{ "--reveal-delay": `${idx * 60}ms` }}
+                >
+                  <div className="flex-shrink-0 mb-2 md:mb-0">
+                    <span className="timeline-num inline-flex items-center justify-center bg-gradient-to-r from-blue-600 to-sky-500 text-white font-bold rounded-xl px-3.5 py-1.5 text-xs sm:text-sm shadow-[0_2px_10px_rgba(37,99,235,0.25)]">
+                      {idx + 1}.
+                    </span>
+                  </div>
+                  <div className="mt-1 md:mt-0">
+                    <h3 className="text-lg sm:text-xl font-bold text-slate-900">{item.title}</h3>
+                    <p className="text-sm sm:text-base text-slate-600 mt-1.5 leading-relaxed">{item.text}</p>
+                  </div>
+                </li>
+              ))}
+            </ol>
+
+            <p className="reveal-hidden mt-10 text-slate-500 text-sm sm:text-base italic text-center relative z-10" data-reveal>
+              Thanks for reading â€” feel free to connect if youâ€™d like to collaborate or see my projects!
+            </p>
+
+          </div>
+        </section>
+      );
+    };
+
+    const Contact = () => (
+      <section id="contact" className="py-6 md:py-8 relative w-full">
+        <div className="crystal-card p-8 sm:p-12 md:p-16 text-center relative z-10">
+          <h2 className="reveal-hidden text-3xl sm:text-4xl md:text-5xl font-extrabold gradient-heading mb-3 relative z-10" data-reveal>Contact Me</h2>
+          <p className="reveal-hidden text-sm sm:text-base md:text-lg text-slate-600 max-w-xl mx-auto mb-8 leading-relaxed relative z-10" data-reveal>
+            Feel free to reach out through any of these platforms â€” Iâ€™m always open to discussing new projects, creative ideas, or opportunities:
+          </p>
+          <div className="flex justify-center relative z-10">
+            <ContactIcons />
+          </div>
+
+          <a href="#Resume" className="section-scroll-arrow absolute right-4 md:right-8 z-20 droplet-btn text-slate-700 hover:text-sky-600 p-2.5 md:p-3 flex items-center justify-center" aria-label="Go to Resume">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    );
+
+    const Resume = () => (
+      <section id="Resume" className="py-6 md:py-8 relative w-full">
+        <div className="crystal-card p-8 sm:p-12 md:p-16 text-center relative z-10">
+          <h2 className="reveal-hidden text-3xl sm:text-4xl md:text-5xl font-extrabold gradient-heading mb-3 relative z-10" data-reveal>Download Resume</h2>
+          <p className="reveal-hidden text-sm sm:text-base md:text-lg text-slate-600 max-w-xl mx-auto mb-8 leading-relaxed relative z-10" data-reveal>
+            Get a copy of my resume to learn more about my experience, technical skill set, and qualifications.
+          </p>
+          <a
+            href="https://drive.google.com/file/d/1xyx_148OnV1bwIAxfcbHDLFGM-M4W4uK/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="droplet-btn inline-flex items-center gap-2.5 text-base md:text-lg font-bold py-4 px-9 group"
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-sky-600 group-hover:translate-y-0.5 transition-transform relative z-10" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+            </svg>
+            <span className="relative z-10">Download Resume</span>
+          </a>
+
+          <a href="#home" className="section-scroll-arrow absolute right-4 md:right-8 z-20 droplet-btn text-slate-700 hover:text-sky-600 p-2.5 md:p-3 flex items-center justify-center" aria-label="Back to Home">
+            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 md:h-6 md:w-6 relative z-10 rotate-180" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 13l-5 5m0 0l-5-5m5 5V6" />
+            </svg>
+          </a>
+        </div>
+      </section>
+    );
+
+    const Footer = () => {
+      const [visitorCount, setVisitorCount] = React.useState(null);
+      const [visitorCounterStatus, setVisitorCounterStatus] = React.useState('loading');
+
+      React.useEffect(() => {
+        fetch(new URL('/visitor-counter.php', window.location.origin), {
+          cache: 'no-store',
+          headers: { Accept: 'application/json' }
+        })
+          .then(response => {
+            if (!response.ok) throw new Error('Visitor counter request failed');
+            return response.json();
+          })
+          .then(data => {
+            if (!Number.isSafeInteger(data.count) || data.count < 0) {
+              throw new Error('Visitor counter returned invalid data');
+            }
+            setVisitorCount(data.count);
+            setVisitorCounterStatus('ready');
+          })
+          .catch(error => {
+            console.error(error);
+            setVisitorCounterStatus('error');
+          });
+      }, []);
+
+      const visitorCounterLabel = visitorCounterStatus === 'loading'
+        ? 'Loading visits…'
+        : visitorCounterStatus === 'error'
+          ? 'Counter unavailable'
+          : `${visitorCount.toLocaleString()} visits`;
+
+      return (
+        <footer className="py-8 text-center text-slate-500 text-xs sm:text-sm border-t border-slate-200/80 mt-12 relative z-10">
+          <p>&copy; {new Date().getFullYear()} Hamza's Portfolio. All rights reserved.</p>
+          <p className="text-slate-400 text-[11px] mt-1">Refined frosted-glass design Â· Built with React</p>
+          <div className="mt-5 flex justify-center">
+            <div
+              className="inline-flex items-center gap-3 rounded-full border border-sky-200/80 bg-white/75 px-4 py-2.5 shadow-lg shadow-slate-900/5 backdrop-blur-xl"
+              role="status"
+              aria-live="polite"
+              aria-label={`Site visitor counter: ${visitorCounterLabel}`}
+            >
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-gradient-to-br from-sky-500 to-indigo-500 text-white shadow-md shadow-sky-500/20" aria-hidden="true">
+                <svg className="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M2.25 12s3.5-6.75 9.75-6.75 9.75 6.75 9.75 6.75-3.5 6.75-9.75 6.75S2.25 12 2.25 12Z" />
+                  <circle cx="12" cy="12" r="2.75" strokeWidth={1.8} />
+                </svg>
+              </span>
+              <span className="text-left">
+                <span className="block text-[10px] font-semibold uppercase tracking-[0.16em] text-slate-400">Site visitors</span>
+                <span className="block text-sm font-bold tabular-nums text-slate-800">
+                  {visitorCounterLabel}
+                </span>
+              </span>
+              <span
+                className={`h-2 w-2 rounded-full ${visitorCounterStatus === 'ready' ? 'bg-emerald-500' : visitorCounterStatus === 'error' ? 'bg-rose-400' : 'bg-sky-400 animate-pulse'}`}
+                aria-hidden="true"
+              />
+            </div>
+          </div>
+        </footer>
+      );
+    };
+
+    const ContactIcons = () => (
+      <ul className="flex flex-row flex-wrap justify-center gap-2.5 sm:gap-3.5 droplet-btn-secondary p-2.5 sm:p-3 shadow-sm">
+        <li>
+          <a
+            href="mailto:hamzardokan@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Email"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all duration-200 relative z-10"
+          >
+            <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <rect x="3" y="5" width="18" height="14" rx="2" stroke="currentColor" strokeWidth="2" />
+              <path d="M3 7l9 6 9-6" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://tinyurl.com/23paazhd"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="WhatsApp"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-600 hover:text-emerald-600 hover:bg-emerald-50 transition-all duration-200 relative z-10"
+          >
+            <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.198.297-.767.967-.94 1.166-.173.198-.347.223-.644.075-.297-.149-1.255-.462-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.173.198-.298.298-.496.099-.198.05-.372-.025-.521-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.372-.01-.571-.01-.198 0-.52.075-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.099 3.205 5.077 4.487.711.306 1.263.489 1.694.626.712.227 1.36.195 1.872.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.075-.124-.272-.198-.57-.347z" />
+              <path d="M20.52 3.48A11.91 11.91 0 0012 0C5.37 0 0 5.37 0 12c0 2.11.55 4.16 1.59 5.98L0 24l6.22-1.63A11.95 11.95 0 0012 24c6.63 0 12-5.37 12-12 0-3.19-1.24-6.19-3.48-8.52zM12 22c-1.83 0-3.61-.49-5.17-1.42l-.37-.22-3.69.97.99-3.59-.24-.37A9.91 9.91 0 012 12C2 6.48 6.48 2 12 2c2.67 0 5.18 1.04 7.07 2.93A9.92 9.92 0 0122 12c0 5.52-4.48 10-10 10z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.facebook.com/fbhamza"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-600 hover:text-blue-600 hover:bg-blue-50 transition-all duration-200 relative z-10"
+          >
+            <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M22.675 0h-21.35C.595 0 0 .592 0 1.326v21.348C0 23.408.595 24 1.326 24h11.495v-9.294H9.691v-3.622h3.13V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.797.143v3.24l-1.918.001c-1.504 0-1.797.715-1.797 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116C23.405 24 24 23.408 24 22.674V1.326C24 .592 23.405 0 22.675 0" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/HamzaCanDo"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="GitHub"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-600 hover:text-blue-700 hover:bg-blue-50 transition-all duration-200 relative z-10"
+          >
+            <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M12 2C6.477 2 2 6.484 2 12.012c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.483 0-.237-.009-.868-.013-1.703-2.782.605-3.369-1.342-3.369-1.342-.454-1.155-1.11-1.463-1.11-1.463-.908-.62.069-.608.069-.608 1.004.07 1.532 1.032 1.532 1.032.892 1.529 2.341 1.088 2.91.832.091-.646.35-1.088.636-1.339-2.221-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.254-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.025A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.338 1.909-1.295 2.748-1.025 2.748-1.025.546 1.378.202 2.396.1 2.65.64.7 1.028 1.595 1.028 2.688 0 3.847-2.337 4.695-4.566 4.944.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.749 0 .268.18.579.688.481C19.138 20.175 22 16.427 22 12.012 22 6.484 17.523 2 12 2z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://www.linkedin.com/in/inhamza/"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="LinkedIn"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-600 hover:text-sky-600 hover:bg-sky-50 transition-all duration-200 relative z-10"
+          >
+            <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.761 0 5-2.239 5-5v-14c0-2.761-2.239-5-5-5zm-11 19h-3v-10h3v10zm-1.5-11.268c-.966 0-1.75-.784-1.75-1.75s.784-1.75 1.75-1.75 1.75.784 1.75 1.75-.784 1.75-1.75 1.75zm13.5 11.268h-3v-5.604c0-1.337-.026-3.063-1.867-3.063-1.868 0-2.154 1.459-2.154 2.967v5.7h-3v-10h2.881v1.367h.041c.401-.761 1.379-1.563 2.838-1.563 3.034 0 3.595 2.001 3.595 4.601v5.595z" />
+            </svg>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://x.com/hamzardokan"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Twitter"
+            className="w-10 h-10 sm:w-11 sm:h-11 rounded-full flex items-center justify-center text-slate-600 hover:text-sky-500 hover:bg-sky-50 transition-all duration-200 relative z-10"
+          >
+            <svg className="h-5 w-5 sm:h-6 sm:w-6" fill="currentColor" viewBox="0 0 24 24">
+              <path d="M24 4.557a9.93 9.93 0 01-2.828.775 4.932 4.932 0 002.165-2.724c-.951.564-2.005.974-3.127 1.195a4.916 4.916 0 00-8.384 4.482c-4.083-.205-7.697-2.162-10.126-5.144a4.822 4.822 0 00-.666 2.475c0 1.708.87 3.216 2.188 4.099a4.904 4.904 0 01-2.228-.616c-.054 1.997 1.397 3.872 3.448 4.292a4.936 4.936 0 01-2.224.084c.627 1.956 2.444 3.377 4.6 3.417a9.867 9.867 0 01-6.102 2.104c-.396 0-.787-.023-1.175-.069a13.945 13.945 0 007.548 2.212c9.058 0 14.009-7.513 14.009-14.009 0-.213-.005-.425-.014-.636A10.025 10.025 0 0024 4.557z" />
+            </svg>
+          </a>
+        </li>
+      </ul>
+    );
+
+    const App = () => {
+      const [, refreshContent] = React.useState(0);
+
+      React.useEffect(() => {
+        const refresh = () => refreshContent(value => value + 1);
+        window.addEventListener('portfolio-content-ready', refresh);
+        return () => window.removeEventListener('portfolio-content-ready', refresh);
+      }, []);
+
+      React.useEffect(() => {
+        const targets = document.querySelectorAll('[data-reveal]');
+
+        if (!('IntersectionObserver' in window)) {
+          targets.forEach(target => target.classList.add('reveal-visible'));
+          return undefined;
+        }
+
+        const observer = new IntersectionObserver((entries, currentObserver) => {
+          entries.forEach(entry => {
+            if (!entry.isIntersecting) return;
+            entry.target.classList.add('reveal-visible');
+            currentObserver.unobserve(entry.target);
+          });
+        }, {
+          threshold: 0.12,
+          rootMargin: '0px 0px -40px 0px'
+        });
+
+        targets.forEach(target => observer.observe(target));
+        return () => observer.disconnect();
+      }, []);
+
+      return (
+        <div className="relative min-h-screen bg-bg-canvas overflow-hidden">
+          <div className="cityscape-background" aria-hidden="true"></div>
+          <div className="nature-video-overlay"></div>
+
+          {/* Ambient Background Layer */}
+          <div className="bg-orb bg-orb-1"></div>
+          <div className="bg-orb bg-orb-2"></div>
+          <div className="bg-orb bg-orb-3"></div>
+          <div className="noise-overlay"></div>
+
+          {/* Floating Pill Nav with Running Light */}
+          <Navbar />
+
+          {/* Hero is full-bleed: rendered OUTSIDE the max-w-[1380px] <main> so the
+              cinematic portrait + dark panel span the whole viewport (no side gutters). */}
+          <Hero />
+
+          {/* Expansive Wide Screen Page Content (Maximized Width) */}
+          <main className="relative z-10 w-full max-w-[1380px] mx-auto px-4 sm:px-6 lg:px-8 xl:px-10 py-6 space-y-12 sm:space-y-16 md:space-y-20">
+            <Skills />
+            <Projects />
+            <About />
+            <Contact />
+            <Resume />
+            <Footer />
+          </main>
+        </div>
+      );
+    };
+
+    const root = ReactDOM.createRoot(document.getElementById("root"));
+    root.render(<App />);
+
+  </script>
+
+</body>
+
+</html>

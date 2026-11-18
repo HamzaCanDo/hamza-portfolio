@@ -1,0 +1,112 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: "Segoe UI", Tahoma, Arial, sans-serif;
+  background: #f5f7fb;
+  color: #1b1f24;
+}
+
+#wrapper {
+  max-width: 980px;
+  margin: 0 auto;
+  background: #ffffff;
+  min-height: 100vh;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+#header {
+  background: #1f4d7a;
+  color: #ffffff;
+  padding: 20px 24px;
+}
+
+#header h1 {
+  margin: 0;
+  font-size: 24px;
+  letter-spacing: 0.5px;
+}
+
+#menu {
+  background: #153a5c;
+}
+
+#menu ul {
+  margin: 0;
+  padding: 0 16px;
+  list-style: none;
+  display: flex;
+  gap: 8px;
+}
+
+#menu a {
+  display: block;
+  padding: 12px 16px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+#menu a:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+#main-content {
+  padding: 24px;
+}
+
+h2 {
+  margin-top: 0;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 12px;
+}
+
+th, td {
+  border: 1px solid #e3e7ed;
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background: #f0f4f9;
+}
+
+.post-form {
+  max-width: 520px;
+}
+
+.form-group {
+  margin-bottom: 14px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: 600;
+}
+
+.form-group input,
+.form-group select {
+  width: 100%;
+  padding: 9px 10px;
+  border: 1px solid #cfd6df;
+  border-radius: 4px;
+}
+
+.submit {
+  background: #1f4d7a;
+  color: #ffffff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.submit:hover {
+  background: #143553;
+}

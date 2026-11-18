@@ -1,0 +1,5 @@
+Options -Indexes
+
+<FilesMatch "^(api_config\.php|migrate\.sql|README.*|\.env.*)$">
+  Require all denied
+</FilesMatch>
