@@ -13,7 +13,7 @@
   <link rel="apple-touch-icon" href="assets/icons/hamza-logo.jpg" />
   <link rel="preconnect" href="https://cdn.tailwindcss.com" />
   <link rel="preconnect" href="https://cdn.jsdelivr.net" crossorigin />
-  <link rel="preload" as="image" href="portfolio-admin/uploads/portfolio/703a386b77dcac13ae33dc9f707684da.webp" fetchpriority="high" />
+  <link rel="preload" as="image" href="assets/images/profile/hero-image.webp" fetchpriority="high" />
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
@@ -1451,6 +1451,8 @@
       // project matches the published static content, use its known-good image
       // paths while keeping the API's project title, description, and URL.
       const fallback = normalizeContent(staticFallback);
+      if (fallback?.images?.hero) normalized.images.hero = fallback.images.hero;
+      if (fallback?.images?.about) normalized.images.about = fallback.images.about;
       // Fold the HSC achievement into the existing education entry, including
       // when an older API timeline still contains the standalone milestone.
       const about = (normalized.about.length ? normalized.about : (fallback?.about || []))

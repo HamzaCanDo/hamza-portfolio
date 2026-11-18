@@ -1,7 +1,7 @@
 {
     "images": {
-        "hero": "/portfolio-admin/uploads/portfolio/703a386b77dcac13ae33dc9f707684da.webp",
-        "about": "/portfolio-admin/uploads/portfolio/3698694d4bcd71fd08e81303d81a1b2f.webp"
+        "hero": "assets/images/profile/hero-image.webp",
+        "about": "assets/images/profile/avatar.jpg"
     },
     "skills": [
         {
