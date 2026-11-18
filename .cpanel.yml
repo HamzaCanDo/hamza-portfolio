@@ -6,23 +6,13 @@ deployment:
     - /bin/cp ./index.html $DEPLOYPATH
     - /bin/cp ./portfolio-content.json $DEPLOYPATH
     - /bin/cp ./visitor-counter.php $DEPLOYPATH
-    - /bin/mkdir -p $DEPLOYPATH/assets
-    - /bin/cp -R ./assets/. $DEPLOYPATH/assets/
-    - /bin/mkdir -p $DEPLOYPATH/cache
-    - /bin/cp -R ./cache/. $DEPLOYPATH/cache/
-    - /bin/mkdir -p $DEPLOYPATH/cgi-bin
-    - /bin/cp -R ./cgi-bin/. $DEPLOYPATH/cgi-bin/
-    - /bin/mkdir -p $DEPLOYPATH/dashboard
-    - /bin/cp -R ./dashboard/. $DEPLOYPATH/dashboard/
-    - /bin/mkdir -p $DEPLOYPATH/id-gen
-    - /bin/cp -R ./id-gen/. $DEPLOYPATH/id-gen/
-    - /bin/mkdir -p $DEPLOYPATH/news-site
-    - /bin/cp -R ./news-site/. $DEPLOYPATH/news-site/
-    - /bin/mkdir -p $DEPLOYPATH/portfolio-admin
-    - /bin/cp -R ./portfolio-admin/. $DEPLOYPATH/portfolio-admin/
-    - /bin/mkdir -p $DEPLOYPATH/portfolio-media
-    - /bin/cp -R ./portfolio-media/. $DEPLOYPATH/portfolio-media/
-    - /bin/mkdir -p $DEPLOYPATH/shopping-project
-    - /bin/cp -R ./shopping-project/. $DEPLOYPATH/shopping-project/
-    - /bin/mkdir -p $DEPLOYPATH/student-db
-    - /bin/cp -R ./student-db/. $DEPLOYPATH/student-db/
+    - /bin/cp -R ./assets $DEPLOYPATH/
+    - /bin/cp -R ./cache $DEPLOYPATH/
+    - /bin/cp -R ./cgi-bin $DEPLOYPATH/
+    - /bin/cp -R ./dashboard $DEPLOYPATH/
+    - /bin/cp -R ./id-gen $DEPLOYPATH/
+    - /bin/cp -R ./news-site $DEPLOYPATH/
+    - /bin/cp -R ./portfolio-admin $DEPLOYPATH/
+    - /bin/cp -R ./portfolio-media $DEPLOYPATH/
+    - /bin/cp -R ./shopping-project $DEPLOYPATH/
+    - /bin/cp -R ./student-db $DEPLOYPATH/

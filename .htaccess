@@ -1,6 +1,7 @@
 
 
 Options -Indexes
+DirectoryIndex index.php index.html
 
 # Keep old portfolio image URLs working for cached pages and existing content.
 RewriteEngine On
