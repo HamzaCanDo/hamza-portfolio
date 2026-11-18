@@ -2,6 +2,18 @@
 deployment:
   tasks:
     - export DEPLOYPATH=/home/kitbinto/hamzaa.top/
-    - /bin/cp -R ./* $DEPLOYPATH
     - /bin/cp ./.htaccess $DEPLOYPATH
+    - /bin/cp ./index.html $DEPLOYPATH
+    - /bin/cp ./portfolio-content.json $DEPLOYPATH
+    - /bin/cp ./visitor-counter.php $DEPLOYPATH
     - /bin/cp -R ./.well-known $DEPLOYPATH
+    - /bin/cp -R ./assets $DEPLOYPATH
+    - /bin/cp -R ./cache $DEPLOYPATH
+    - /bin/cp -R ./cgi-bin $DEPLOYPATH
+    - /bin/cp -R ./dashboard $DEPLOYPATH
+    - /bin/cp -R ./id-gen $DEPLOYPATH
+    - /bin/cp -R ./news-site $DEPLOYPATH
+    - /bin/cp -R ./portfolio-admin $DEPLOYPATH
+    - /bin/cp -R ./portfolio-media $DEPLOYPATH
+    - /bin/cp -R ./shopping-project $DEPLOYPATH
+    - /bin/cp -R ./student-db $DEPLOYPATH
