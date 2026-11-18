@@ -4,8 +4,8 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Hamza | Full Stack Web Developer â€” Portfolio</title>
-  <meta name="description" content="Portfolio of Hamza â€” Full Stack Web Developer. Modern web applications built with PHP, Laravel, React, Vue, and modern web technologies." />
+  <title>Hamza | Full Stack Web Developer — Portfolio</title>
+  <meta name="description" content="Portfolio of Hamza — Full Stack Web Developer. Modern web applications built with PHP, Laravel, React, Vue, and modern web technologies." />
   <meta name="author" content="Hamza" />
   <meta name="theme-color" content="#070B14" />
   <link rel="canonical" href="https://hamzaa.top/" />
@@ -17,12 +17,12 @@
 
   <!-- Open Graph / social preview -->
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="Hamza â€” Portfolio" />
+  <meta property="og:site_name" content="Hamza — Portfolio" />
   <meta property="og:title" content="Hamza | Full Stack Web Developer" />
   <meta property="og:description" content="I build simple, accessible, high-performance web applications that users enjoy and businesses trust." />
   <meta property="og:url" content="https://hamzaa.top/" />
   <meta property="og:image" content="https://hamzaa.top/assets/images/profile/hero-image.webp" />
-  <meta property="og:image:alt" content="Hamza â€” Full Stack Web Developer" />
+  <meta property="og:image:alt" content="Hamza — Full Stack Web Developer" />
   <meta name="twitter:card" content="summary_large_image" />
   <meta name="twitter:title" content="Hamza | Full Stack Web Developer" />
   <meta name="twitter:description" content="I build simple, accessible, high-performance web applications that users enjoy and businesses trust." />
@@ -209,7 +209,7 @@
       100% { transform: translate(-25px, 30px) scale(0.96); }
     }
 
-    /* Subtle grain for depth only â€” kept extremely faint */
+    /* Subtle grain for depth only — kept extremely faint */
     .noise-overlay {
       position: fixed;
       inset: 0;
@@ -357,7 +357,7 @@
       right: 5%;
     }
 
-    /* Desktop copy positioning â€” aligns with the max-w-[1380px] + px-10 content grid */
+    /* Desktop copy positioning — aligns with the max-w-[1380px] + px-10 content grid */
     .hero-copy {
       position: relative;
       z-index: 10;
@@ -428,7 +428,7 @@
       transform: translateY(-1px);
     }
 
-    /* Inline icon marquee carousel â€” sits next to the greeting pill */
+    /* Inline icon marquee carousel — sits next to the greeting pill */
     .hero-floating-badge {
       display: flex;
       align-items: center;
@@ -885,7 +885,7 @@
 
     /* Collapse the toggle labels earlier so the 6 nav links + controls always fit
        on one line inside the pill (they previously overflowed and were clipped by
-       the .floating-nav overflow:hidden at ~820â€“1100px). */
+       the .floating-nav overflow:hidden at ~820–1100px). */
     @media (max-width: 1100px) {
       .floating-nav > div > a > span > span {
         display: none;
@@ -935,7 +935,7 @@
     }
 
     /* The hero down-arrow floats over the dark portrait, so it needs a dark glass disc
-       with a white glyph (it was a near-white arrow on a near-white circle â‰ˆ1.3:1). */
+       with a white glyph (it was a near-white arrow on a near-white circle ≈1.3:1). */
     #home .section-scroll-arrow {
       background: rgba(15, 23, 42, 0.72);
       border: 1px solid rgba(255, 255, 255, 0.28);
@@ -1335,7 +1335,7 @@
     /* Mobile hero rows.
        This used to be `.hero-copy .flex.flex-wrap.items-center`, which also matched
        the tech-tag row and the greeting row (both carry `items-center`). Forcing them
-       to a column with `align-items: stretch` gave every tech tag â€” and both CTAs â€”
+       to a column with `align-items: stretch` gave every tech tag — and both CTAs —
        the full container width, so the tags rendered as 7 stacked solid bars instead
        of a wrapped cloud. Scope the column stack to the CTA row only; the tag row
        keeps its Tailwind `items-center` + `flex-wrap` behaviour and wraps naturally. */
@@ -1457,7 +1457,7 @@
         .filter(item => !/higher secondary certificate|\bhsc\b/i.test(item.title || ''));
       const education = about.find(item => /^education\b/i.test((item.title || '').trim()));
       if (education) {
-        education.text = 'I completed my Higher Secondary Certificate (HSC) in the Arts stream in 2026. Now that Iâ€™m more financially stable, I plan to enroll in a diploma in Computer Science.';
+        education.text = 'I completed my Higher Secondary Certificate (HSC) in the Arts stream in 2026. Now that I’m more financially stable, I plan to enroll in a diploma in Computer Science.';
       }
       normalized.about = about;
 
@@ -1561,7 +1561,7 @@
             <img
               className="hero-image"
               src={window.portfolioContent?.images?.hero || "assets/images/profile/hero-image.webp"}
-              alt="Hamza â€” Full Stack Web Developer"
+              alt="Hamza — Full Stack Web Developer"
               width="665"
               height="1024"
               fetchpriority="high"
@@ -1583,7 +1583,7 @@
                 </div>
                 {/* Icon marquee pill */}
                 {(() => {
-                  // Self-hosted SVGs (assets/icons) â€” no third-party 404s, no CDN dependency.
+                  // Self-hosted SVGs (assets/icons) — no third-party 404s, no CDN dependency.
                   // Rendered white by the `filter: brightness(0) invert(1)` rule on .icon-marquee-track img.
                   const icons = [
                     { src: 'assets/icons/openai.svg', alt: 'OpenAI' },
@@ -1641,7 +1641,7 @@
               </div>
 
               {/* Action Buttons: 3D Water Droplet Buttons.
-                  `.hero-btn-row` scopes the mobile column stack to this row only â€” see
+                  `.hero-btn-row` scopes the mobile column stack to this row only — see
                   the `@media (max-width: 767px)` rule near the end of the stylesheet. */}
               <div className="hero-btn-row flex flex-wrap items-center justify-center md:justify-start gap-4">
                 <a
@@ -1951,7 +1951,7 @@
       },
       {
         name: "Unique ID Generator",
-        desc: "Generates a new ID each time â€” never repeats a previous one.",
+        desc: "Generates a new ID each time — never repeats a previous one.",
         images: ["assets/images/projects/id-gen/unique-id-generator-oop.png"],
         demoUrl: "https://hamzaa.top/id-gen"
       }
@@ -2131,7 +2131,7 @@
             <div className="text-center mb-10 md:mb-14 relative z-10">
               <h2 className="reveal-hidden text-3xl sm:text-4xl md:text-5xl font-extrabold gradient-heading mb-3" data-reveal>Projects</h2>
               <p className="reveal-hidden text-slate-600 text-sm sm:text-base md:text-lg max-w-2xl mx-auto" data-reveal>
-                A selection of web applications, systems, and dashboards Iâ€™ve built
+                A selection of web applications, systems, and dashboards I’ve built
               </p>
             </div>
 
@@ -2185,7 +2185,7 @@
                 className="absolute top-5 right-5 md:top-8 md:right-8 droplet-btn glass-pill w-11 h-11 md:w-12 md:h-12 flex items-center justify-center text-xl font-bold z-50 text-slate-800 hover:text-sky-600"
                 aria-label="Close full preview"
               >
-                <span className="relative z-10">âœ•</span>
+                <span className="relative z-10">✕</span>
               </button>
 
               {/* Prev Button in Modal: Droplet Bead */}
@@ -2196,7 +2196,7 @@
                   className="absolute left-3 md:left-8 top-1/2 -translate-y-1/2 droplet-btn glass-pill p-3.5 text-lg md:text-2xl z-50 text-slate-800 hover:text-sky-600"
                   aria-label="Previous image"
                 >
-                  <span className="relative z-10">â—€</span>
+                  <span className="relative z-10">◀</span>
                 </button>
               )}
 
@@ -2228,7 +2228,7 @@
                   className="absolute right-3 md:right-8 top-1/2 -translate-y-1/2 droplet-btn glass-pill p-3.5 text-lg md:text-2xl z-50 text-slate-800 hover:text-sky-600"
                   aria-label="Next image"
                 >
-                  <span className="relative z-10">â–¶</span>
+                  <span className="relative z-10">▶</span>
                 </button>
               )}
             </div>
@@ -2241,12 +2241,12 @@
       const defaultTimeline = [
         { title: 'Born and raised in Dhaka', text: 'I grew up in Dhaka and completed my SSC 10th grade in 2019.' },
         { title: 'Started working in 2019', text: 'Due to family financial needs, I joined the workforce right after SSC and have been working continuously from 2019 until October 2025.' },
-        { title: 'Current job', text: 'I work as a Junior Operator at a water treatment plant â€” a role that taught me responsibility, time management, and hands-on problem solving.' },
-        { title: 'A lifelong interest in tech', text: 'Iâ€™ve loved technology since childhood â€” from Nokia 3310/5310 phones to using the internet on my dadâ€™s phone before 3G/4G. I got my first computer at eight, and that curiosity never left.' },
+        { title: 'Current job', text: 'I work as a Junior Operator at a water treatment plant — a role that taught me responsibility, time management, and hands-on problem solving.' },
+        { title: 'A lifelong interest in tech', text: 'I’ve loved technology since childhood — from Nokia 3310/5310 phones to using the internet on my dad’s phone before 3G/4G. I got my first computer at eight, and that curiosity never left.' },
         { title: 'Learning programming', text: 'I began studying programming seriously in 2023 while working full-time, following tutorials and building small projects in my free time.' },
-        { title: 'Education â€” now and next steps', text: 'I completed my Higher Secondary Certificate (HSC) in the Arts stream in 2026. Now that Iâ€™m more financially stable, I plan to enroll in a diploma in Computer Science.' },
-        { title: 'Continuous learner', text: 'Because technology keeps changing, Iâ€™m always learning â€” from front-end and back-end basics to new frameworks and tools. I love exploring everything about tech.' },
-        { title: 'Future interests', text: 'Iâ€™m particularly excited to study LLMs, AI, and Python to expand my skill set and work on smarter, more useful applications.' },
+        { title: 'Education — now and next steps', text: 'I completed my Higher Secondary Certificate (HSC) in the Arts stream in 2026. Now that I’m more financially stable, I plan to enroll in a diploma in Computer Science.' },
+        { title: 'Continuous learner', text: 'Because technology keeps changing, I’m always learning — from front-end and back-end basics to new frameworks and tools. I love exploring everything about tech.' },
+        { title: 'Future interests', text: 'I’m particularly excited to study LLMs, AI, and Python to expand my skill set and work on smarter, more useful applications.' },
         { title: 'Career goal', text: 'My dream is to become a full-time programmer, building practical, user-friendly web applications that solve real problems.' }
       ];
       const timeline = window.portfolioContent?.about?.length
@@ -2297,7 +2297,7 @@
             </ol>
 
             <p className="reveal-hidden mt-10 text-slate-500 text-sm sm:text-base italic text-center relative z-10" data-reveal>
-              Thanks for reading â€” feel free to connect if youâ€™d like to collaborate or see my projects!
+              Thanks for reading — feel free to connect if you’d like to collaborate or see my projects!
             </p>
 
           </div>
@@ -2310,7 +2310,7 @@
         <div className="crystal-card p-8 sm:p-12 md:p-16 text-center relative z-10">
           <h2 className="reveal-hidden text-3xl sm:text-4xl md:text-5xl font-extrabold gradient-heading mb-3 relative z-10" data-reveal>Contact Me</h2>
           <p className="reveal-hidden text-sm sm:text-base md:text-lg text-slate-600 max-w-xl mx-auto mb-8 leading-relaxed relative z-10" data-reveal>
-            Feel free to reach out through any of these platforms â€” Iâ€™m always open to discussing new projects, creative ideas, or opportunities:
+            Feel free to reach out through any of these platforms — I’m always open to discussing new projects, creative ideas, or opportunities:
           </p>
           <div className="flex justify-center relative z-10">
             <ContactIcons />
