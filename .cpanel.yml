@@ -1,14 +1,14 @@
 ---
 deployment:
   tasks:
-    - export DEPLOYPATH=/home/kitbinto/hamzaa.top/
+    - export DEPLOYPATH="$HOME/hamzaa.top/"
+    - /bin/mkdir -p "$DEPLOYPATH"
     - /bin/cp ./.htaccess $DEPLOYPATH
     - /bin/cp ./index.html $DEPLOYPATH
     - /bin/cp ./portfolio-content.json $DEPLOYPATH
     - /bin/cp ./visitor-counter.php $DEPLOYPATH
     - /bin/cp -R ./assets $DEPLOYPATH/
     - /bin/cp -R ./cache $DEPLOYPATH/
-    - /bin/cp -R ./cgi-bin $DEPLOYPATH/
     - /bin/cp -R ./dashboard $DEPLOYPATH/
     - /bin/cp -R ./id-gen $DEPLOYPATH/
     - /bin/cp -R ./news-site $DEPLOYPATH/
